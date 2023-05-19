@@ -7,7 +7,7 @@ $bar-width: 20%;
   .rightbar {
     @apply fixed top-0 bottom-0 overflow-y-auto;
     width: $bar-width;
-    max-width: 350px;
+    max-width: 300px;
   }
 
   .leftbar {
