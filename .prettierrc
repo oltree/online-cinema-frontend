@@ -17,9 +17,9 @@
     "^@/utils/(.*)$",
     "^@/configs/(.*)$",
     "^@/store/(.*)$",
+    "(.scss)$",
     "^../(.*)",
-    "^./(.*)",
-    "(.scss)$"
+    "^./(.*)"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true

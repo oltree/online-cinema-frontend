@@ -1,13 +1,9 @@
-import { Inter } from 'next/font/google';
+import { NextPage } from 'next';
 
-const inter = Inter({ subsets: ['latin'] });
+import Home from '@/components/screens/home/Home';
 
-export default function Home() {
-  return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      hello world
-    </main>
-  );
-}
+export const HomePage: NextPage = () => {
+  return <Home />;
+};
+
+export default HomePage;
