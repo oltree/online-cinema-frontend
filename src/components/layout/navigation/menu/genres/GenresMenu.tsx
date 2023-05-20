@@ -1,17 +1,23 @@
 import { FC } from 'react';
 
+import Loader from '@/components/ui/Loader';
+
 import Menu from '../Menu';
-import { generalMenu } from '../menu.data';
 
 import { usePopularGenres } from './usePopularGenres';
 
+const NUMBER_OF_DOWNLOAD_GENRES = 5;
+
 const GenresMenu: FC = () => {
   const { isLoading, data } = usePopularGenres();
+  const genresMenu = { title: 'Popular genres', items: data || [] };
 
   return isLoading ? (
-    <div className='mx-11 mb-6'>Loading...</div>
+    <div className='mr-10 mb-10'>
+      <Loader count={NUMBER_OF_DOWNLOAD_GENRES} className='h-7 mt-5' />
+    </div>
   ) : (
-    <Menu menu={{ title: 'Popular genres', items: data || [] }} />
+    <Menu menu={genresMenu} />
   );
 };
 
