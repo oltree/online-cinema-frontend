@@ -14,4 +14,9 @@ export const MovieService = {
         : {},
     });
   },
+  async getPopularMovies() {
+    const { data } = await api.get<IMovie[]>(getMoviesUrl('/most-popular'));
+
+    return data;
+  },
 };

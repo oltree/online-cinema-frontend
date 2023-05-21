@@ -9,7 +9,7 @@ const Search: FC = () => {
   const { searchTerm, isSuccess, popularMovies, onSearch } = useSearch();
 
   return (
-    <div className='relative'>
+    <div className='relative mb-5'>
       <SearchField searchTerm={searchTerm} onSearch={onSearch} />
       {isSuccess && <SearchList movies={popularMovies || []} />}
     </div>
