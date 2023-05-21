@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { Meta } from '@/components/meta';
-import Heading from '@/components/ui/Heading';
+import { Heading } from '@/components/ui/heading';
 
 const Home: FC = () => {
   return (

@@ -5,7 +5,7 @@ import { api } from '@/api/interceptors';
 import { getGenresUrl } from '@/configs/api.config';
 
 export const GenreService = {
-  async getAll(genreSearchFilter?: string) {
+  async getAllGenres(genreSearchFilter?: string) {
     return api.get<IGenre[]>(getGenresUrl(``), {
       params: genreSearchFilter
         ? {
