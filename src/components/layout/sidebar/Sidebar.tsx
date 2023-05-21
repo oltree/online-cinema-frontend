@@ -1,14 +1,16 @@
 import cn from 'classnames';
 import { FC } from 'react';
 
-import styles from './Sidebar.module.scss';
+import Search from './Search/Search';
 
 interface SidebarProps {
   className?: string;
 }
 
-const Sidebar: FC<SidebarProps> = ({ className }) => {
-  return <div className={cn(styles.sidebar, className)}>Sidebar</div>;
-};
+const Sidebar: FC<SidebarProps> = ({ className }) => (
+  <div className={cn('p-layout', className)}>
+    <Search />
+  </div>
+);
 
 export default Sidebar;

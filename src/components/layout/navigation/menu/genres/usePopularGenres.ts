@@ -11,7 +11,7 @@ const GENRE_LIMIT = 4;
 export const usePopularGenres = () => {
   const queryData = useQuery(
     'popular genres menu',
-    () => GenreService.getAll(),
+    () => GenreService.getAllGenres(),
     {
       select: ({ data }) =>
         data

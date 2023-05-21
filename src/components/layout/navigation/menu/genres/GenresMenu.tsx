@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import Loader from '@/components/ui/Loader';
+import { Loader } from '@/components/ui/loader';
 
 import Menu from '../Menu';
 

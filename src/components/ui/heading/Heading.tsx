@@ -1,12 +1,12 @@
 import cn from 'classnames';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 interface HeadingProps {
   title: string;
   className?: string;
 }
 
-const Heading: FC<HeadingProps> = ({ title, className }) => {
+export const Heading: FC<HeadingProps> = memo(({ title, className }) => {
   const dynamicTextSize = className?.includes('xl') ? '' : 'text-3xl';
 
   return (
@@ -19,6 +19,4 @@ const Heading: FC<HeadingProps> = ({ title, className }) => {
       {title}
     </h1>
   );
-};
-
-export default Heading;
+});
