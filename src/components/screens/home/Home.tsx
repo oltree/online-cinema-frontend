@@ -6,7 +6,7 @@ import { Heading } from '@/components/ui/heading';
 const Home: FC = () => {
   return (
     <Meta
-      title='Watch movies online'
+      title='Movies online'
       description='Watch MovieApp movies and TV shows online or stream right to your browser.'
     >
       <Heading
