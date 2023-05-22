@@ -1,0 +1,15 @@
+.inputContainer {
+  @apply relative mb-8 text-left border-b border-gray-600 transition-colors focus-within:border-primary;
+
+  .label {
+    @apply text-xs uppercase text-gray-600;
+  }
+
+  .input {
+    @apply w-full outline-border-none focus:ring-0 bg-transparent text-gray-500 px-0;
+  }
+
+  .error {
+    @apply absolute -bottom-6 left-0 w-full text-sm text-primary;
+  }
+}

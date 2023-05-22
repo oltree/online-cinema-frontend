@@ -5,6 +5,8 @@ import { FC } from 'react';
 import { Loader } from '@/components/ui/loader';
 import { MaterialIcon } from '@/components/ui/material-icon';
 
+import { Routes } from '@/shared/enums/routes.enum';
+
 import { getMovieUrl } from '@/configs/url.config';
 
 import styles from './PopularMovies.module.scss';
@@ -43,7 +45,7 @@ const PopularMovies: FC = () => {
           </div>
         </div>
       ))}
-      <Link href='/trending' className={styles.link}>
+      <Link href={Routes.Trending} className={styles.link}>
         See more
       </Link>
     </div>
