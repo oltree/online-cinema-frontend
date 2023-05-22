@@ -1,3 +1,4 @@
+import { Routes } from '@/shared/enums/routes.enum';
 import { IMovie } from '@/shared/interfaces/movie.interface';
 
 import { api } from '@/api/interceptors';
@@ -15,7 +16,7 @@ export const MovieService = {
     });
   },
   async getPopularMovies() {
-    const { data } = await api.get<IMovie[]>(getMoviesUrl('/most-popular'));
+    const { data } = await api.get<IMovie[]>(getMoviesUrl(Routes.Popular));
 
     return data;
   },

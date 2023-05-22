@@ -1,3 +1,5 @@
+import { Routes } from '@/shared/enums/routes.enum';
+
 import { IMenu } from './menu.types';
 
 export const mainMenu: IMenu = {
@@ -5,22 +7,22 @@ export const mainMenu: IMenu = {
   items: [
     {
       icon: 'MdHome',
-      link: '/',
+      link: Routes.Home,
       title: 'Home',
     },
     {
       icon: 'MdExplore',
-      link: '/genres',
+      link: Routes.Genres,
       title: 'Discovery',
     },
     {
       icon: 'MdRefresh',
-      link: '/fresh',
+      link: Routes.Fresh,
       title: 'Fresh movies',
     },
     {
       icon: 'MdLocalFireDepartment',
-      link: '/trending',
+      link: Routes.Trending,
       title: 'Trending now',
     },
   ],
