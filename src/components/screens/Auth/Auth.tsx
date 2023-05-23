@@ -4,12 +4,13 @@ import { useForm } from 'react-hook-form';
 import { Meta } from '@/components/meta';
 import { Heading } from '@/components/ui/heading';
 
+import { useDispatchedActions } from '@/hooks/useDispatchedActions';
+
 import { AuthModes } from '@/shared/enums/authModes.enum';
-import { AuthModeType } from '@/shared/types/authMode.type';
+import { AuthModeType, AuthType } from '@/shared/types/auth.types';
 
 import styles from './Auth.module.scss';
 
-import { AuthFormType } from './auth.type';
 import { AuthButtons, AuthFields } from './components';
 import { useAuthRedirect } from './useAuthRedirect';
 
@@ -23,15 +24,14 @@ const Auth: FC = () => {
     register: registerInput,
     handleSubmit,
     formState: { errors },
-  } = useForm<AuthFormType>({
+  } = useForm<AuthType>({
     mode: 'onChange',
   });
 
-  const handleRegister = (data: AuthFormType) => {};
-  const handleLogin = (data: AuthFormType) => {};
+  const { register, login } = useDispatchedActions();
 
-  const onSubmit = (data: AuthFormType) => {
-    mode === AuthModes.Login ? handleLogin(data) : handleRegister(data);
+  const onSubmit = (data: AuthType) => {
+    mode === AuthModes.Login ? login(data) : register(data);
 
     reset();
   };

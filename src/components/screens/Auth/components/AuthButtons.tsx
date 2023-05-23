@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 
 import { AuthModes } from '@/shared/enums/authModes.enum';
-import { AuthModeType } from '@/shared/types/authMode.type';
+import { AuthModeType } from '@/shared/types/auth.types';
 
 import styles from '../Auth.module.scss';
 

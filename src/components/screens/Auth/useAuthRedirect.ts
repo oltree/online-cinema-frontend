@@ -10,7 +10,7 @@ export const useAuthRedirect = () => {
 
   const { query, push } = useRouter();
 
-  const redirect = String(query.redirect) || Routes.Home;
+  const redirect = query.redirect ? String(query.redirect) : Routes.Home;
 
   useEffect(() => {
     if (user) push(redirect);

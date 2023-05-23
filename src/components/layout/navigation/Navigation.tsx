@@ -1,12 +1,10 @@
 import cn from 'classnames';
+import dynamic from 'next/dynamic';
 import { FC } from 'react';
-
-import { API_URL } from '@/configs/api.config';
 
 import styles from './Navigation.module.scss';
 
 import Logo from './Logo';
-import Menu from './menu/Menu';
 import GenresMenu from './menu/genres/GenresMenu';
 import { generalMenu, mainMenu } from './menu/menu.data';
 
@@ -14,15 +12,17 @@ interface NavigationProps {
   className?: string;
 }
 
-const Navigation: FC<NavigationProps> = ({ className }) => {
-  return (
-    <div className={cn(styles.navigation, className)}>
-      <Logo />
-      <Menu menu={mainMenu} />
-      <GenresMenu />
-      <Menu menu={generalMenu} />
-    </div>
-  );
-};
+const DynamicMenu = dynamic(() => import('./menu/Menu'), {
+  ssr: false,
+});
+
+const Navigation: FC<NavigationProps> = ({ className }) => (
+  <div className={cn(styles.navigation, className)}>
+    <Logo />
+    <DynamicMenu menu={mainMenu} />
+    <GenresMenu />
+    <DynamicMenu menu={generalMenu} />
+  </div>
+);
 
 export default Navigation;
