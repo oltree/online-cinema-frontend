@@ -4,12 +4,11 @@ import { FieldErrors, UseFormRegister } from 'react-hook-form';
 import { Field } from '@/components/ui/field';
 
 import { emailRegex, passwordRegex } from '@/shared/regexes';
-
-import { AuthFormType } from '../auth.type';
+import { AuthType } from '@/shared/types/auth.types';
 
 interface AuthFieldsProps {
-  registerInput: UseFormRegister<AuthFormType>;
-  errors: FieldErrors<AuthFormType>;
+  registerInput: UseFormRegister<AuthType>;
+  errors: FieldErrors<AuthType>;
 }
 
 export const AuthFields: FC<AuthFieldsProps> = memo(

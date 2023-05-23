@@ -6,7 +6,7 @@ import { IMeta } from '@/shared/interfaces/meta.interface';
 
 import logo from '@/assets/icons/logo.svg';
 
-import { getOnlyText } from '@/utils/strings/getOnlyText';
+import { getOnlyText } from '@/utils/getOnlyText';
 
 import { getTotalTitle, siteName } from '@/configs/seo.config';
 

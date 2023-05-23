@@ -1,5 +1,7 @@
 import { Routes } from '@/shared/enums/routes.enum';
 
+import { getAdminHomeUrl } from '@/configs/url.config';
+
 import { IMenu } from './menu.types';
 
 export const mainMenu: IMenu = {
@@ -30,5 +32,31 @@ export const mainMenu: IMenu = {
 
 export const generalMenu: IMenu = {
   title: 'General',
-  items: [],
+  items: [
+    {
+      icon: 'MdSettings',
+      link: Routes.Profile,
+      title: 'Profile',
+      isAuth: true,
+    },
+    {
+      icon: 'MdLogin',
+      link: Routes.Auth,
+      title: 'Login',
+      isAuth: false,
+    },
+    {
+      icon: 'MdLogout',
+      link: Routes.Auth,
+      title: 'Logout',
+      isAuth: true,
+    },
+    {
+      icon: 'MdOutlineLock',
+      link: getAdminHomeUrl(),
+      title: 'Admin panel',
+      isAuth: true,
+      isAdmin: true,
+    },
+  ],
 };

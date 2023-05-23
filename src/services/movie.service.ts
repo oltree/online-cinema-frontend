@@ -1,7 +1,7 @@
 import { Routes } from '@/shared/enums/routes.enum';
 import { IMovie } from '@/shared/interfaces/movie.interface';
 
-import { api } from '@/api/interceptors';
+import { api } from '@/api/api';
 
 import { getMoviesUrl } from '@/configs/api.config';
 
