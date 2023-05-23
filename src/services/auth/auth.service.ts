@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
 
-import { api } from '@/api/api';
+import api from '@/api/api';
 import { getContentType } from '@/api/api.helper';
 
 import { getAuthUrl } from '@/configs/api.config';
