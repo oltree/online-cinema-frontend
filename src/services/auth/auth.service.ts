@@ -7,7 +7,11 @@ import { getAuthUrl } from '@/configs/api.config';
 
 import { IAuthResponse } from '@/store/user/user.interface';
 
-import { removeTokensFromCookies, saveAuthDataToStorage } from './auth.helpers';
+import {
+  removeTokensFromCookies,
+  saveAuthDataToStorage,
+  saveTokensToCookies,
+} from './auth.helpers';
 
 export const AuthService = {
   async register(email: string, password: string) {
@@ -17,7 +21,7 @@ export const AuthService = {
     });
 
     if (response.data.accessToken) {
-      saveAuthDataToStorage(response.data);
+      saveTokensToCookies(response.data);
     }
 
     return response;
@@ -38,7 +42,7 @@ export const AuthService = {
 
   logout() {
     removeTokensFromCookies();
-    localStorage.removeItem('user');
+    localStorage.clear();
   },
 
   async getNewTokens() {
