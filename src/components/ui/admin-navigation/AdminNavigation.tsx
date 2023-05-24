@@ -1,12 +1,11 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
-import NavItem from '@/components/screens/admin/navigation/NavItem';
+import styles from './AdminNavigation.module.scss';
 
-import styles from './Navigation.module.scss';
-
+import NavItem from './NavItem';
 import { navItems } from './navigation.data';
 
-const Navigation: FC = () => (
+export const AdminNavigation: FC = memo(() => (
   <nav className={styles.navigation}>
     <ul className={styles.list}>
       {navItems.map(item => (
@@ -14,6 +13,4 @@ const Navigation: FC = () => (
       ))}
     </ul>
   </nav>
-);
-
-export default Navigation;
+));

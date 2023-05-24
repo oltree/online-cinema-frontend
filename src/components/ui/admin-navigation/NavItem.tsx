@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC } from 'react';
 
-import styles from './Navigation.module.scss';
+import styles from './AdminNavigation.module.scss';
 
 import { INavItem } from './navigation.type';
 
