@@ -6,12 +6,14 @@ import { getGenresUrl } from '@/configs/api.config';
 
 export const GenreService = {
   async getAllGenres(genreSearchFilter?: string) {
-    return api.get<IGenre[]>(getGenresUrl(``), {
+    const response = await api.get<IGenre[]>(getGenresUrl(``), {
       params: genreSearchFilter
         ? {
             genreSearchFilter,
           }
         : {},
     });
+
+    return response?.data;
   },
 };

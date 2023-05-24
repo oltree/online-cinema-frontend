@@ -12,7 +12,7 @@ export const Heading: FC<HeadingProps> = memo(({ title, className }) => {
   return (
     <h1
       className={cn(
-        `text-white text-opacity-80 font-semibold ${dynamicTextSize}`,
+        `mb-10 text-white text-opacity-80 font-semibold  ${dynamicTextSize}`,
         className
       )}
     >

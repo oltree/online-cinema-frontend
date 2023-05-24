@@ -15,7 +15,7 @@ export const useSearch = () => {
     ['search movie list', debouncedSearch],
     () => MovieService.getAllMovies(debouncedSearch),
     {
-      select: ({ data }) => data,
+      select: data => data,
       enabled: !!debouncedSearch,
     }
   );

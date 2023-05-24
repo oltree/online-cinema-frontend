@@ -13,7 +13,7 @@ export const usePopularGenres = () => {
     'popular genres menu',
     () => GenreService.getAllGenres(),
     {
-      select: ({ data }) =>
+      select: data =>
         data
           .map(
             (genre): IMenuItem => ({

@@ -14,14 +14,14 @@ const Menu: FC<MenuProps> = ({ menu }) => {
   const { title, items } = useFilteredMenuItems(menu);
 
   return (
-    <div className={styles.menu}>
+    <nav className={styles.menu}>
       <p className={styles.heading}>{title}</p>
       <ul className={styles.items}>
         {items.map(item => (
           <MenuItem key={item.title} item={item} />
         ))}
       </ul>
-    </div>
+    </nav>
   );
 };
 

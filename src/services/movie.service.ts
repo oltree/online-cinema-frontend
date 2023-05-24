@@ -7,17 +7,20 @@ import { getMoviesUrl } from '@/configs/api.config';
 
 export const MovieService = {
   async getAllMovies(genreSearchFilter?: string) {
-    return api.get<IMovie[]>(getMoviesUrl(``), {
+    const response = await api.get<IMovie[]>(getMoviesUrl(``), {
       params: genreSearchFilter
         ? {
             genreSearchFilter,
           }
         : {},
     });
-  },
-  async getPopularMovies() {
-    const { data } = await api.get<IMovie[]>(getMoviesUrl(Routes.Popular));
 
-    return data;
+    return response?.data;
+  },
+
+  async getPopularMovies() {
+    const response = await api.get<IMovie[]>(getMoviesUrl(Routes.Popular));
+
+    return response?.data;
   },
 };
