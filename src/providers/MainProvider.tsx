@@ -5,8 +5,11 @@ import ReduxToastr from 'react-redux-toastr';
 
 import Layout from '@/components/layout/Layout';
 
+import { ComponentRolesType } from '@/shared/types/roles.types';
+
 import { store } from '@/store/store';
 
+import AuthProvider from './AuthProvider/AuthProvider';
 import HeadProvider from './HeadProvider/HeadProvider';
 
 const DEFAULT_DELAY_NOTICE = 3000;
@@ -19,7 +22,10 @@ const queryClient = new QueryClient({
   },
 });
 
-const MainProvider: FC<PropsWithChildren> = ({ children }) => (
+const MainProvider: FC<PropsWithChildren<ComponentRolesType>> = ({
+  children,
+  Component,
+}) => (
   <HeadProvider>
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
@@ -33,7 +39,9 @@ const MainProvider: FC<PropsWithChildren> = ({ children }) => (
           transitionIn='fadeIn'
           transitionOut='fadeOut'
         />
-        <Layout>{children}</Layout>
+        <AuthProvider Component={Component}>
+          <Layout>{children}</Layout>
+        </AuthProvider>
       </QueryClientProvider>
     </Provider>
   </HeadProvider>
