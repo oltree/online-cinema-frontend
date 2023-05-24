@@ -1,12 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getLocalStorageItem } from '@/utils/getLocalStorageItem';
-
 import { checkAuth, login, logout, register } from './user.actions';
 import { UserInitialState } from './user.interface';
 
 const initialState: UserInitialState = {
-  user: getLocalStorageItem('user'),
+  user: null,
   isLoading: false,
 };
 
@@ -19,9 +17,8 @@ const userSlice = createSlice({
       .addCase(register.pending, state => {
         state.isLoading = true;
       })
-      .addCase(register.fulfilled, (state, { payload }) => {
+      .addCase(register.fulfilled, state => {
         state.isLoading = false;
-        state.user = payload.user;
       })
       .addCase(register.rejected, state => {
         state.isLoading = false;

@@ -13,22 +13,17 @@ const CheckRole: FC<PropsWithChildren<ComponentRolesType>> = ({
   const { user } = useAuth();
   const { pathname, replace } = useRouter();
 
-  const Children = () => <>{children}</>;
-
+  const isAdmin = user?.isAdmin;
   const isUser = user && !user.isAdmin;
 
-  if (user?.isAdmin || (isOnlyAdmin && isUser)) return <Children />;
-
-  if (isOnlyAdmin && pathname !== Routes.NotFound) {
-    replace(Routes.NotFound);
-
-    return null;
+  if (isAdmin || (isUser && isOnlyUser)) {
+    return <>{children}</>;
   }
 
-  if (isOnlyUser && pathname !== Routes.Auth) {
-    replace(Routes.Auth);
+  const redirectToPath = isOnlyAdmin ? Routes.NotFound : Routes.Auth;
 
-    return null;
+  if (pathname !== redirectToPath) {
+    replace(redirectToPath);
   }
 
   return null;
