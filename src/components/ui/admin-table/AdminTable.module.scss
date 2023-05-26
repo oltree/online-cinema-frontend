@@ -1,0 +1,32 @@
+.search {
+  @apply mb-10 flex items-center justify-between flex-wrap gap-12;
+}
+
+.actions {
+  @apply flex items-center justify-end gap-4;
+  width: 25%;
+
+  > button {
+    @apply outline-border-none bg-transparent text-xl text-primary opacity-80 transition-opacity hover:opacity-100;
+  }
+}
+
+.row {
+  @apply py-3 px-5 mb-4 flex items-center justify-between text-white text-opacity-80 bg-gray-700 bg-opacity-50 rounded-lg transition-colors hover:bg-opacity-80;
+
+  .item {
+    width: 25%;
+
+    &:last-child {
+      @apply text-right justify-end;
+    }
+  }
+}
+
+.header {
+  @apply bg-primary bg-opacity-20 hover:bg-opacity-20;
+}
+
+.notFound {
+  @apply py-3 text-2xl text-white text-opacity-60 text-center;
+}

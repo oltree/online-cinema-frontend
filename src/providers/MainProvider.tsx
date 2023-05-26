@@ -5,14 +5,13 @@ import ReduxToastr from 'react-redux-toastr';
 
 import Layout from '@/components/layout/Layout';
 
+import { DEFAULT_DELAY } from '@/shared/constants/delays';
 import { ComponentRolesType } from '@/shared/types/roles.types';
 
 import { store } from '@/store/store';
 
 import AuthProvider from './AuthProvider/AuthProvider';
 import HeadProvider from './HeadProvider/HeadProvider';
-
-const DEFAULT_DELAY_NOTICE = 3000;
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,7 +34,7 @@ const MainProvider: FC<PropsWithChildren<ComponentRolesType>> = ({
           position='bottom-right'
           preventDuplicates
           progressBar
-          timeOut={DEFAULT_DELAY_NOTICE}
+          timeOut={DEFAULT_DELAY}
           transitionIn='fadeIn'
           transitionOut='fadeOut'
         />
