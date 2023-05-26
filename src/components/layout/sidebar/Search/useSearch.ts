@@ -3,13 +3,13 @@ import { useQuery } from 'react-query';
 
 import { useDebounce } from '@/hooks/useDebounce';
 
-import { MovieService } from '@/services/movie.service';
+import { DEBOUNCE_DELAY } from '@/shared/constants/delays';
 
-const DEFAULT_DELAY = 500;
+import { MovieService } from '@/services/movie.service';
 
 export const useSearch = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const debouncedSearch = useDebounce(searchTerm, DEFAULT_DELAY);
+  const debouncedSearch = useDebounce(searchTerm, DEBOUNCE_DELAY);
 
   const { isSuccess, data } = useQuery(
     ['search movie list', debouncedSearch],

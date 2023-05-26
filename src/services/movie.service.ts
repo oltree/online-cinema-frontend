@@ -6,11 +6,11 @@ import api from '@/api/api';
 import { getMoviesUrl } from '@/configs/api.config';
 
 export const MovieService = {
-  async getAllMovies(genreSearchFilter?: string) {
+  async getAllMovies(searchTerm?: string) {
     const response = await api.get<IMovie[]>(getMoviesUrl(``), {
-      params: genreSearchFilter
+      params: searchTerm
         ? {
-            genreSearchFilter,
+            searchTerm,
           }
         : {},
     });
