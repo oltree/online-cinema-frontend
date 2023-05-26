@@ -18,6 +18,7 @@ const Users: FC = () => {
       <AdminSearch searchTerm={searchTerm} onSearch={handleSearch} />
       <AdminTable
         isLoading={isLoading}
+        headerItems={['Email', 'Data register', 'Actions']}
         onRemove={deleteAsync}
         tableItems={data || []}
       />

@@ -6,21 +6,23 @@ import styles from './AdminTable.module.scss';
 
 import AdminHeader from './AdminHeader';
 import AdminTableItem from './AdminTableItem';
-import { IUserData } from './admin-table.type';
+import { ITableItem } from './admin-table.type';
 
 interface AdminTableProps {
-  tableItems: IUserData[];
+  tableItems: ITableItem[];
   isLoading: boolean;
+  headerItems: string[];
   onRemove: (id: string) => void;
 }
 
 const AdminTable: FC<AdminTableProps> = ({
   tableItems,
   isLoading,
+  headerItems,
   onRemove,
 }) => (
   <>
-    <AdminHeader />
+    <AdminHeader headerItems={headerItems} />
 
     {isLoading ? (
       <Loader count={1} height={48} />

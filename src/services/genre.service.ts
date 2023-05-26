@@ -16,4 +16,16 @@ export const GenreService = {
 
     return response?.data;
   },
+
+  async createGenre() {
+    const response = await api.post<string>(getGenresUrl(''));
+
+    return response?.data;
+  },
+
+  async deleteGenre(_id: string) {
+    const response = await api.delete<string>(getGenresUrl(`/${_id}`));
+
+    return response?.data;
+  },
 };

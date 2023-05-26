@@ -1,8 +1,8 @@
+import Genres from '@/components/screens/admin/genres/Genres';
+
 import { NextPageAuth } from '@/shared/types/roles.types';
 
-const GenresPage: NextPageAuth = () => {
-  return <div>genres</div>;
-};
+const GenresPage: NextPageAuth = () => <Genres />;
 
 GenresPage.isOnlyAdmin = true;
 
