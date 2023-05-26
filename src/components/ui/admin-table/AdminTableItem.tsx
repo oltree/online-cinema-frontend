@@ -3,10 +3,10 @@ import { FC } from 'react';
 import styles from './AdminTable.module.scss';
 
 import AdminActions from './AdminActions';
-import { IUserData } from './admin-table.type';
+import { ITableItem } from './admin-table.type';
 
 interface IAdminTableItem {
-  tableItem: IUserData;
+  tableItem: ITableItem;
   onRemove: (id: string) => void;
 }
 const AdminTableItem: FC<IAdminTableItem> = ({ tableItem, onRemove }) => (

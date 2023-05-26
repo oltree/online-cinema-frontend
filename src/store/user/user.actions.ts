@@ -7,7 +7,7 @@ import { AuthService } from '@/services/auth/auth.service';
 
 import { getErrorMesssage } from '@/api/api.helper';
 
-import { showErrorNotification } from '@/utils/showErrorNotification';
+import { showErrorNotification } from '@/utils/error/showErrorNotification';
 
 import { IAuthResponse } from './user.interface';
 

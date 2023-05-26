@@ -2,7 +2,7 @@ import { ChangeEvent, useMemo, useState } from 'react';
 import { useMutation, useQuery } from 'react-query';
 import { toastr } from 'react-redux-toastr';
 
-import { IUserData } from '@/components/ui/admin-table/admin-table.type';
+import { ITableItem } from '@/components/ui/admin-table/admin-table.type';
 
 import { useDebounce } from '@/hooks/useDebounce';
 
@@ -11,7 +11,7 @@ import { IUser } from '@/shared/interfaces/user.interface';
 
 import { UserService } from '@/services/user.service';
 
-import { convertDateFromMongo } from '@/utils/convertDateFromMongo';
+import { convertDateFromMongo } from '@/utils/date/convertDateFromMongo';
 
 import { getAdminUrl } from '@/configs/url.config';
 
@@ -20,12 +20,12 @@ export const useUsers = () => {
   const debouncedSearch = useDebounce(searchTerm, DEBOUNCE_DELAY);
 
   const queryData = useQuery(
-    ['User list for admin', debouncedSearch],
+    ['User list', debouncedSearch],
     () => UserService.getAllUsers(debouncedSearch),
     {
       select: data =>
         data.map(
-          (userData: IUser): IUserData => ({
+          (userData: IUser): ITableItem => ({
             _id: userData._id,
             editUrl: getAdminUrl(`/user/edit/${userData._id}`),
             items: [userData.email, convertDateFromMongo(userData.createdAt)],
@@ -43,7 +43,7 @@ export const useUsers = () => {
   };
 
   const { mutateAsync: deleteAsync } = useMutation(
-    'Delete user from list',
+    'Delete user',
     (userId: string) => UserService.deleteUser(userId),
     {
       onSuccess: () => {

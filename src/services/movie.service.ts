@@ -23,4 +23,16 @@ export const MovieService = {
 
     return response?.data;
   },
+
+  async createMovie() {
+    const response = await api.post<string>(getMoviesUrl(''));
+
+    return response?.data;
+  },
+
+  async deleteMovie(_id: string) {
+    const response = await api.delete<string>(getMoviesUrl(`/${_id}`));
+
+    return response?.data;
+  },
 };

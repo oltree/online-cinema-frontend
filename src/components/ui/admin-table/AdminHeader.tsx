@@ -3,11 +3,13 @@ import { FC } from 'react';
 
 import styles from './AdminTable.module.scss';
 
-const HEADERS = ['Email', 'Data register', 'Actions'];
+interface AdminHeaderProps {
+  headerItems: string[];
+}
 
-const AdminHeader: FC = () => (
+const AdminHeader: FC<AdminHeaderProps> = ({ headerItems }) => (
   <div className={cn(styles.row, styles.header)}>
-    {HEADERS.map(item => (
+    {headerItems.map(item => (
       <p key={item} className={styles.item}>
         {item}
       </p>

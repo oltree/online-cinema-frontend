@@ -1,8 +1,8 @@
+import Movies from '@/components/screens/admin/movies/Movies';
+
 import { NextPageAuth } from '@/shared/types/roles.types';
 
-const MoviesPage: NextPageAuth = () => {
-  return <div>movies</div>;
-};
+const MoviesPage: NextPageAuth = () => <Movies />;
 
 MoviesPage.isOnlyAdmin = true;
 
