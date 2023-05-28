@@ -4,13 +4,13 @@ import { UseFormRegisterReturn } from 'react-hook-form';
 
 import styles from './Field.module.scss';
 
-interface FiledProps extends InputHTMLAttributes<HTMLInputElement> {
+interface FieldProps extends InputHTMLAttributes<HTMLInputElement> {
   register: UseFormRegisterReturn<string>;
   placeholder: string;
   error?: string | undefined;
 }
 
-export const Field: FC<FiledProps> = memo(
+export const Field: FC<FieldProps> = memo(
   ({ register, error, placeholder, className, ...rest }) => (
     <div className={styles.inputContainer}>
       <label className={styles.label}>{placeholder}</label>
