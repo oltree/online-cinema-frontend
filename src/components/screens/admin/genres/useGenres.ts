@@ -21,7 +21,7 @@ export const useGenres = () => {
 
   const queryData = useQuery(
     ['Genre list', debouncedSearch],
-    () => GenreService.getAllGenres(debouncedSearch),
+    () => GenreService.getAll(debouncedSearch),
     {
       select: data =>
         data.map(
@@ -44,7 +44,7 @@ export const useGenres = () => {
 
   const { mutateAsync: createAsync } = useMutation(
     'Create genre',
-    () => GenreService.createGenre(),
+    () => GenreService.create(),
     {
       onSuccess(data: string) {
         toastr.success('Create genre', 'Create genre successful');
@@ -58,7 +58,7 @@ export const useGenres = () => {
 
   const { mutateAsync: deleteAsync } = useMutation(
     'Delete genre',
-    (genreId: string) => GenreService.deleteGenre(genreId),
+    (genreId: string) => GenreService.delete(genreId),
     {
       onSuccess: () => {
         toastr.success('Delete genre', 'Delete genre successfully');

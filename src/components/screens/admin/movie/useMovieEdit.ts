@@ -3,29 +3,29 @@ import { UseFormSetValue } from 'react-hook-form';
 import { useMutation, useQuery } from 'react-query';
 import { toastr } from 'react-redux-toastr';
 
-import { GenreService } from '@/services/genre.service';
+import { MovieService } from '@/services/movie.service';
 
 import { getObjectKeys } from '@/utils/getKeys';
 
 import { getAdminUrl } from '@/configs/url.config';
 
-import { IGenreEditInput } from './genre-edit.interface';
+import { IMovieEditInput } from './movie-edit.enterface';
 
-export const useGenreEdit = (setValue: UseFormSetValue<IGenreEditInput>) => {
+export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
   const { push, query } = useRouter();
 
-  const genreId = String(query.id);
+  const movieId = String(query.id);
 
   const { isLoading } = useQuery(
-    ['Genre', genreId],
-    () => GenreService.getById(genreId),
+    ['Movie', movieId],
+    () => MovieService.getById(movieId),
     {
       onSuccess: data => {
         getObjectKeys(data).forEach(key => setValue(key, data[key]));
       },
 
       onError: (error: string) => {
-        toastr.error(error, 'Get genre');
+        toastr.error(error, 'Get movie');
       },
 
       enabled: !!query.id,
@@ -33,21 +33,21 @@ export const useGenreEdit = (setValue: UseFormSetValue<IGenreEditInput>) => {
   );
 
   const { mutateAsync } = useMutation(
-    'Update genre',
-    (data: IGenreEditInput) => GenreService.update(genreId, data),
+    'Update movie',
+    (data: IMovieEditInput) => MovieService.update(movieId, data),
     {
       onSuccess: () => {
-        toastr.success('Update genre', 'Update genre successful');
-        push(getAdminUrl('genres'));
+        toastr.success('Update movie', 'Update movie successful');
+        push(getAdminUrl('movies'));
       },
 
       onError: (error: string) => {
-        toastr.error(error, 'Update genre');
+        toastr.error(error, 'Update movie');
       },
     }
   );
 
-  const onSubmit = async (data: IGenreEditInput) => await mutateAsync(data);
+  const onSubmit = async (data: IMovieEditInput) => await mutateAsync(data);
 
   return { onSubmit, isLoading };
 };

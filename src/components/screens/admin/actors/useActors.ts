@@ -21,7 +21,7 @@ export const useActors = () => {
 
   const queryData = useQuery(
     ['Actor list', debouncedSearch],
-    () => ActorService.getAllActors(debouncedSearch),
+    () => ActorService.getAll(debouncedSearch),
     {
       select: data =>
         data.map(
@@ -44,7 +44,7 @@ export const useActors = () => {
 
   const { mutateAsync: createAsync } = useMutation(
     'Create actor',
-    () => ActorService.createActor(),
+    () => ActorService.create(),
     {
       onSuccess(data: string) {
         toastr.success('Create actor', 'Create actor successful');
@@ -58,7 +58,7 @@ export const useActors = () => {
 
   const { mutateAsync: deleteAsync } = useMutation(
     'Delete actor',
-    (actorId: string) => ActorService.deleteActor(actorId),
+    (actorId: string) => ActorService.delete(actorId),
     {
       onSuccess: () => {
         toastr.success('Delete actor', 'Delete actor successfully');

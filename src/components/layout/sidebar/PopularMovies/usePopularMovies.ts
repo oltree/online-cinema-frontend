@@ -4,7 +4,7 @@ import { MovieService } from '@/services/movie.service';
 
 export const usePopularMovies = () => {
   const { isLoading, data } = useQuery('Popular sidebar movies', () =>
-    MovieService.getPopularMovies()
+    MovieService.getPopular()
   );
 
   return { isLoading, popularMovies: data };

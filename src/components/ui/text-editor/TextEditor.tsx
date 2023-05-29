@@ -6,11 +6,13 @@ import { FC, memo, useEffect, useState } from 'react';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
+import { OnChangeType } from '@/shared/types/onChange.type';
+
 import styles from './TextEditor.module.scss';
 
 interface TextEditorProps extends Omit<EditorProps, 'editorState'> {
   value: string;
-  onChange: (...event: any[]) => void;
+  onChange: OnChangeType;
   placeholder?: string;
   error?: string | undefined;
 }
