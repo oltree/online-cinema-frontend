@@ -23,7 +23,7 @@ export const useMovies = () => {
 
   const queryData = useQuery(
     ['Movie list', debouncedSearch],
-    () => MovieService.getAllMovies(debouncedSearch),
+    () => MovieService.getAll(debouncedSearch),
     {
       select: data =>
         data.map(
@@ -50,7 +50,7 @@ export const useMovies = () => {
 
   const { mutateAsync: createAsync } = useMutation(
     'Create movie',
-    () => MovieService.createMovie(),
+    () => MovieService.create(),
     {
       onSuccess(data: string) {
         toastr.success('Create movie', 'Create movie successful');
@@ -64,7 +64,7 @@ export const useMovies = () => {
 
   const { mutateAsync: deleteAsync } = useMutation(
     'Delete movie',
-    (movieId: string) => MovieService.deleteMovie(movieId),
+    (movieId: string) => MovieService.delete(movieId),
     {
       onSuccess: () => {
         toastr.success('Delete movie', 'Delete movie successfully');

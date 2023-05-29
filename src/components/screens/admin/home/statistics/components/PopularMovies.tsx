@@ -18,7 +18,7 @@ import styles from '../Statistics.module.scss';
 const PopularMovies: FC = () => {
   const { isLoading, data: movie } = useQuery(
     'Most polular movie in statistics',
-    () => MovieService.getPopularMovies(),
+    () => MovieService.getPopular(),
     {
       select: (data): IMovie => data[0],
     }
