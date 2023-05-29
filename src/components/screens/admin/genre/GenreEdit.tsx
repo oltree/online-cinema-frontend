@@ -13,8 +13,6 @@ import { SlugField } from '@/components/ui/slug-field';
 
 import { generateUrlSlug } from '@/utils/text/generateUrlSlug';
 
-import styles from './GenreEdit.module.scss';
-
 import { IGenreEditInput } from './genre-edit.interface';
 import { useGenreEdit } from './useGenreEdit';
 
@@ -53,7 +51,6 @@ const GenreEdit: FC = () => {
                 })}
                 placeholder='Name'
                 error={errors.name?.message}
-                className={styles.input}
               />
 
               <SlugField
@@ -73,7 +70,6 @@ const GenreEdit: FC = () => {
                 })}
                 placeholder='Icon'
                 error={errors.icon?.message}
-                className={styles.input}
               />
             </div>
 
