@@ -1,5 +1,9 @@
 .wrapper {
-  @apply border-0;
+  @apply border-0 mb-10;
+
+  p {
+    @apply text-xs uppercase text-gray-600 block;
+  }
 
   .editorContainer {
     .toolbar {
@@ -16,6 +20,10 @@
 
     .editor {
       @apply h-96 border rounded-b-lg border-gray-700 px-4 text-gray-500 overflow-hidden;
+    }
+
+    .error {
+      @apply border-[red];
     }
   }
 }

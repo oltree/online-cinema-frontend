@@ -6,7 +6,7 @@ import { getActorsUrl } from '@/configs/api.config';
 
 export const ActorService = {
   async getAllActors(searchTerm?: string) {
-    const response = await api.get<IActor[]>(getActorsUrl(``), {
+    const response = await api.get<IActor[]>(getActorsUrl('/'), {
       params: searchTerm
         ? {
             searchTerm,
@@ -18,7 +18,7 @@ export const ActorService = {
   },
 
   async createActor() {
-    const response = await api.post<string>(getActorsUrl(''));
+    const response = await api.post<string>(getActorsUrl('/'));
 
     return response?.data;
   },

@@ -10,8 +10,8 @@ import styles from './TextEditor.module.scss';
 
 interface TextEditorProps extends Omit<EditorProps, 'editorState'> {
   value: string;
-  placeholder: string;
   onChange: (...event: any[]) => void;
+  placeholder?: string;
   error?: string | undefined;
 }
 
@@ -48,12 +48,12 @@ const TextEditor: FC<TextEditorProps> = ({
   return (
     <div className={cn(styles.wrapper, 'animate-fade')}>
       <label>
-        <span>{placeholder}</span>
+        <p>{placeholder}</p>
 
         <div className={styles.editorContainer}>
           <Editor
             toolbarClassName={styles.toolbar}
-            editorClassName={styles.editor}
+            editorClassName={cn(styles.editor, error && styles.error)}
             editorState={editorState}
             onEditorStateChange={handleEditorStateChange}
             spellCheck
@@ -73,8 +73,6 @@ const TextEditor: FC<TextEditorProps> = ({
             }}
           />
         </div>
-
-        {error && <div className={styles.error}>{error}</div>}
       </label>
     </div>
   );

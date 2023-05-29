@@ -7,7 +7,7 @@ import { getMoviesUrl } from '@/configs/api.config';
 
 export const MovieService = {
   async getAllMovies(searchTerm?: string) {
-    const response = await api.get<IMovie[]>(getMoviesUrl(``), {
+    const response = await api.get<IMovie[]>(getMoviesUrl('/'), {
       params: searchTerm
         ? {
             searchTerm,
@@ -25,7 +25,7 @@ export const MovieService = {
   },
 
   async createMovie() {
-    const response = await api.post<string>(getMoviesUrl(''));
+    const response = await api.post<string>(getMoviesUrl('/'));
 
     return response?.data;
   },
