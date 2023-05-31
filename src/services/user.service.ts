@@ -6,7 +6,7 @@ import { getUsersUrl } from '@/configs/api.config';
 
 export const UserService = {
   async getAllUsers(searchTerm: string) {
-    const response = await api.get<IUser[]>(getUsersUrl('/'), {
+    const response = await api.get<IUser[]>(getUsersUrl(''), {
       params: searchTerm
         ? {
             searchTerm,

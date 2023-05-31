@@ -9,7 +9,7 @@ import { getMoviesUrl } from '@/configs/api.config';
 
 export const MovieService = {
   async getAll(searchTerm?: string) {
-    const response = await api.get<IMovie[]>(getMoviesUrl('/'), {
+    const response = await api.get<IMovie[]>(getMoviesUrl(''), {
       params: searchTerm
         ? {
             searchTerm,
@@ -27,7 +27,7 @@ export const MovieService = {
   },
 
   async create() {
-    const response = await api.post<string>(getMoviesUrl('/'));
+    const response = await api.post<string>(getMoviesUrl(''));
 
     return response?.data;
   },

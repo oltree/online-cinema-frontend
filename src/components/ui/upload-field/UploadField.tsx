@@ -45,7 +45,7 @@ export const UploadField: FC<UploadFieldProps> = memo(
               {isLoading ? (
                 <Loader count={1} className='w-full h-full' />
               ) : (
-                value && <Image src={value} alt='' layout='fill' unoptimized />
+                value && <Image src={value} alt='value' unoptimized />
               )}
             </div>
           )}
