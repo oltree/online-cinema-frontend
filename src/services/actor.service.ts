@@ -2,7 +2,7 @@ import { IActorEditInput } from '@/components/screens/admin/actor/actor-edit.int
 
 import { IActor } from '@/shared/interfaces/actor.interface';
 
-import api from '@/api/api';
+import api from '@/api/config';
 
 import { getActorsUrl } from '@/configs/api.config';
 

@@ -29,9 +29,9 @@ const ActorEdit: FC = () => {
   const { isLoading, onSubmit } = useActorEdit(setValue);
 
   return (
-    <Meta title='Edit genre'>
+    <Meta title='Edit actor'>
       <AdminNavigation />
-      <Heading title='Edit genre' />
+      <Heading title='Edit actor' />
       <form onSubmit={handleSubmit(onSubmit)}>
         {isLoading ? (
           <Loader count={3} />

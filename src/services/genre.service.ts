@@ -2,7 +2,7 @@ import { IGenreEditInput } from '@/components/screens/admin/genre/genre-edit.int
 
 import { IGenre } from '@/shared/interfaces/genre.interface';
 
-import api from '@/api/api';
+import api from '@/api/config';
 
 import { getGenresUrl } from '@/configs/api.config';
 

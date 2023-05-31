@@ -6,7 +6,7 @@ import { AuthService } from '@/services/auth/auth.service';
 
 import { API_URL } from '@/configs/api.config';
 
-import { getContentType, getErrorMesssage } from './api.helper';
+import { getContentType, getErrorMesssage } from './config.helper';
 
 const api = axios.create({
   baseURL: API_URL,

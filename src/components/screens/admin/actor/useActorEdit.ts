@@ -5,7 +5,7 @@ import { toastr } from 'react-redux-toastr';
 
 import { ActorService } from '@/services/actor.service';
 
-import { getObjectKeys } from '@/utils/getKeys';
+import { getObjectKeys } from '@/utils/getObjectKeys';
 
 import { getAdminUrl } from '@/configs/url.config';
 

@@ -1,6 +1,6 @@
 import { IUser } from '@/shared/interfaces/user.interface';
 
-import api from '@/api/api';
+import api from '@/api/config';
 
 import { getUsersUrl } from '@/configs/api.config';
 
