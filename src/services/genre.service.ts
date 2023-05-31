@@ -2,13 +2,13 @@ import { IGenreEditInput } from '@/components/screens/admin/genre/genre-edit.int
 
 import { IGenre } from '@/shared/interfaces/genre.interface';
 
-import api from '@/api/api';
+import api from '@/api/config';
 
 import { getGenresUrl } from '@/configs/api.config';
 
 export const GenreService = {
   async getAll(searchTerm?: string) {
-    const response = await api.get<IGenre[]>(getGenresUrl('/'), {
+    const response = await api.get<IGenre[]>(getGenresUrl(''), {
       params: searchTerm
         ? {
             searchTerm,
@@ -20,7 +20,7 @@ export const GenreService = {
   },
 
   async create() {
-    const response = await api.post<string>(getGenresUrl('/'));
+    const response = await api.post<string>(getGenresUrl(''));
 
     return response?.data;
   },

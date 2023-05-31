@@ -29,60 +29,59 @@ const ActorEdit: FC = () => {
   const { isLoading, onSubmit } = useActorEdit(setValue);
 
   return (
-    <Meta title='Edit genre'>
+    <Meta title='Edit actor'>
       <AdminNavigation />
-      <Heading title='Edit genre' />
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {isLoading ? (
-          <Loader count={3} />
-        ) : (
-          <>
-            <div className='flex items-center flex-wrap justify-between'>
-              <Field
-                register={register('name', {
-                  required: 'Name is required!',
-                })}
-                placeholder='Name'
-                error={errors.name?.message}
-              />
+      <Heading title='Edit actor' />
 
-              <SlugField
-                register={register('slug', {
-                  required: 'Slug is required!',
-                })}
-                generate={() => {
-                  setValue('slug', generateUrlSlug(getValues('name')));
-                }}
-                placeholder='Slug'
-                error={errors.slug?.message}
-              />
+      {isLoading ? (
+        <Loader count={3} />
+      ) : (
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className='flex items-center flex-wrap justify-between'>
+            <Field
+              register={register('name', {
+                required: 'Name is required!',
+              })}
+              placeholder='Name'
+              error={errors.name?.message}
+            />
 
-              <Controller
-                control={control}
-                name='photo'
-                defaultValue=''
-                render={({
-                  field: { value, onChange },
-                  formState: { errors },
-                }) => (
-                  <UploadField
-                    value={value}
-                    onChange={onChange}
-                    error={errors.photo?.message}
-                    folder='actors'
-                    placeholder='Photo'
-                  />
-                )}
-                rules={{
-                  required: 'Photo is required!',
-                }}
-              />
-            </div>
+            <SlugField
+              register={register('slug', {
+                required: 'Slug is required!',
+              })}
+              generate={() => {
+                setValue('slug', generateUrlSlug(getValues('name')));
+              }}
+              placeholder='Slug'
+              error={errors.slug?.message}
+            />
 
-            <Button>Update</Button>
-          </>
-        )}
-      </form>
+            <Controller
+              control={control}
+              name='photo'
+              defaultValue=''
+              render={({
+                field: { value, onChange },
+                formState: { errors },
+              }) => (
+                <UploadField
+                  value={value}
+                  onChange={onChange}
+                  error={errors.photo?.message}
+                  folder='actors'
+                  placeholder='Photo'
+                />
+              )}
+              rules={{
+                required: 'Photo is required!',
+              }}
+            />
+          </div>
+
+          <Button>Update</Button>
+        </form>
+      )}
     </Meta>
   );
 };

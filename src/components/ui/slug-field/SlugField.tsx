@@ -8,7 +8,7 @@ import { Field } from '../field';
 interface SlugFieldProps {
   register: UseFormRegisterReturn<string>;
   generate: VoidFunction;
-  placeholder: string;
+  placeholder?: string;
   error?: string | undefined;
 }
 

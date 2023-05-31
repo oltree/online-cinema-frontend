@@ -4,9 +4,9 @@ import { UseFormRegisterReturn } from 'react-hook-form';
 
 import styles from './Field.module.scss';
 
-interface FieldProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface FieldProps extends InputHTMLAttributes<HTMLInputElement> {
   register: UseFormRegisterReturn<string>;
-  placeholder: string;
+  placeholder?: string;
   error?: string | undefined;
 }
 

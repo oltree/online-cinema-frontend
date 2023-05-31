@@ -5,14 +5,14 @@ import { toastr } from 'react-redux-toastr';
 
 import { MovieService } from '@/services/movie.service';
 
-import { getObjectKeys } from '@/utils/getKeys';
+import { getObjectKeys } from '@/utils/getObjectKeys';
 
 import { getAdminUrl } from '@/configs/url.config';
 
 import { IMovieEditInput } from './movie-edit.enterface';
 
 export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
-  const { push, query } = useRouter();
+  const { query, push } = useRouter();
 
   const movieId = String(query.id);
 
@@ -21,13 +21,13 @@ export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
     () => MovieService.getById(movieId),
     {
       onSuccess: data => {
-        getObjectKeys(data).forEach(key => setValue(key, data[key]));
+        getObjectKeys(data).forEach(key => {
+          setValue(key, data[key]);
+        });
       },
-
-      onError: (error: string) => {
+      onError(error: string) {
         toastr.error(error, 'Get movie');
       },
-
       enabled: !!query.id,
     }
   );
@@ -36,12 +36,11 @@ export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
     'Update movie',
     (data: IMovieEditInput) => MovieService.update(movieId, data),
     {
-      onSuccess: () => {
-        toastr.success('Update movie', 'Update movie successful');
+      onSuccess() {
+        toastr.success('Update movie', 'update was successful');
         push(getAdminUrl('movies'));
       },
-
-      onError: (error: string) => {
+      onError(error: string) {
         toastr.error(error, 'Update movie');
       },
     }

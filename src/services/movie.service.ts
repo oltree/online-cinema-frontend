@@ -3,13 +3,13 @@ import { IMovieEditInput } from '@/components/screens/admin/movie/movie-edit.ent
 import { Routes } from '@/shared/enums/routes.enum';
 import { IMovie } from '@/shared/interfaces/movie.interface';
 
-import api from '@/api/api';
+import api from '@/api/config';
 
 import { getMoviesUrl } from '@/configs/api.config';
 
 export const MovieService = {
   async getAll(searchTerm?: string) {
-    const response = await api.get<IMovie[]>(getMoviesUrl('/'), {
+    const response = await api.get<IMovie[]>(getMoviesUrl(''), {
       params: searchTerm
         ? {
             searchTerm,
@@ -27,7 +27,7 @@ export const MovieService = {
   },
 
   async create() {
-    const response = await api.post<string>(getMoviesUrl('/'));
+    const response = await api.post<string>(getMoviesUrl(''));
 
     return response?.data;
   },

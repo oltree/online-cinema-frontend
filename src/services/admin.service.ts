@@ -1,4 +1,4 @@
-import api from '@/api/api';
+import api from '@/api/config';
 
 import { getUsersUrl } from '@/configs/api.config';
 

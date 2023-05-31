@@ -34,7 +34,7 @@
       }
 
       .genres {
-        @apply text-gray-600 text-sm;
+        @apply flex flex-col text-gray-600 text-sm;
       }
 
       .rating {

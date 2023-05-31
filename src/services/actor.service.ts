@@ -2,13 +2,13 @@ import { IActorEditInput } from '@/components/screens/admin/actor/actor-edit.int
 
 import { IActor } from '@/shared/interfaces/actor.interface';
 
-import api from '@/api/api';
+import api from '@/api/config';
 
 import { getActorsUrl } from '@/configs/api.config';
 
 export const ActorService = {
   async getAll(searchTerm?: string) {
-    const response = await api.get<IActor[]>(getActorsUrl('/'), {
+    const response = await api.get<IActor[]>(getActorsUrl(''), {
       params: searchTerm
         ? {
             searchTerm,
@@ -20,7 +20,7 @@ export const ActorService = {
   },
 
   async create() {
-    const response = await api.post<string>(getActorsUrl('/'));
+    const response = await api.post<string>(getActorsUrl(''));
 
     return response?.data;
   },

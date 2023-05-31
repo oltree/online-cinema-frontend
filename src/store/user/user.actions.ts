@@ -5,7 +5,7 @@ import { AuthType } from '@/shared/types/auth.types';
 
 import { AuthService } from '@/services/auth/auth.service';
 
-import { getErrorMesssage } from '@/api/api.helper';
+import { getErrorMesssage } from '@/api/config.helper';
 
 import { showErrorNotification } from '@/utils/error/showErrorNotification';
 
