@@ -1,11 +1,12 @@
 import { IMovieEditInput } from '@/components/screens/admin/movie/movie-edit.enterface';
 
 import { Routes } from '@/shared/enums/routes.enum';
+import { IActor } from '@/shared/interfaces/actor.interface';
 import { IMovie } from '@/shared/interfaces/movie.interface';
 
 import api from '@/api/config';
 
-import { getMoviesUrl } from '@/configs/api.config';
+import { getActorsUrl, getMoviesUrl } from '@/configs/api.config';
 
 export const MovieService = {
   async getAll(searchTerm?: string) {
@@ -46,6 +47,22 @@ export const MovieService = {
 
   async getById(_id: string) {
     const response = await api.get<IMovieEditInput>(getMoviesUrl(`/${_id}`));
+
+    return response?.data;
+  },
+
+  async getByGenre(genreIds: string[]) {
+    const response = await api.post<IMovie[]>(getMoviesUrl('/by-genres'), {
+      genreIds,
+    });
+
+    return response?.data;
+  },
+
+  async getByActor(actorId: string) {
+    const response = await api.get<IMovie[]>(
+      getMoviesUrl(`/by-actor/${actorId}`)
+    );
 
     return response?.data;
   },

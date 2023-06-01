@@ -10,6 +10,6 @@ export const Description: FC<DescriptionProps> = memo(({ text, className }) => (
   <div
     className={`mb-10 text-lg font-light text-white text-opacity-60 ${className}`}
   >
-    <p>{parse(text)}</p>
+    {parse(text)}
   </div>
 ));
