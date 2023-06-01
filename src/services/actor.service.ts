@@ -42,4 +42,10 @@ export const ActorService = {
 
     return response?.data;
   },
+
+  async getBySlug(slug: string) {
+    const response = await api.get<IActor>(getActorsUrl(`/by-slug/${slug}`));
+
+    return response?.data;
+  },
 };

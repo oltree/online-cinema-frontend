@@ -42,4 +42,10 @@ export const GenreService = {
 
     return response?.data;
   },
+
+  async getBySlug(slug: string) {
+    const response = await api.get<IGenre>(getGenresUrl(`/by-slug/${slug}`));
+
+    return response?.data;
+  },
 };

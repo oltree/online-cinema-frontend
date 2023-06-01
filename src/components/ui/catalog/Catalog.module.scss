@@ -1,0 +1,15 @@
+.heading {
+  @apply mb-3;
+}
+
+.movies {
+  @apply flex flex-wrap;
+
+  > a {
+    @apply mr-8 animate-fade;
+  }
+
+  > a:nth-child(3n) {
+    @apply mr-0;
+  }
+}
