@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { useAuth } from '@/hooks/useAuth';
 
 import { IMenu } from './menu.types';
@@ -15,5 +17,5 @@ export const useFilteredMenuItems = (menu: IMenu) => {
     return { title, items: filteredItems };
   }
 
-  return { title, items };
+  return useMemo(() => ({ title, items }), [title, items]);
 };

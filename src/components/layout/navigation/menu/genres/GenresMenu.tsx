@@ -14,7 +14,7 @@ const GenresMenu: FC = () => {
 
   return isLoading ? (
     <div className='mr-10 mb-10'>
-      <Loader count={NUMBER_OF_DOWNLOAD_GENRES} className='h-7 mt-5' />
+      <Loader count={NUMBER_OF_DOWNLOAD_GENRES} className='h-7' />
     </div>
   ) : (
     <Menu menu={genresMenu} />

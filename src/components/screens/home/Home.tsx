@@ -1,15 +1,14 @@
 import { FC } from 'react';
 
 import { Meta } from '@/components/meta';
+import Gallery from '@/components/ui/gallery/Gallery';
 import { Heading } from '@/components/ui/heading';
 import Slider from '@/components/ui/slider/Slider';
-import { ISlide } from '@/components/ui/slider/slider.interface';
+import { SubHeading } from '@/components/ui/sub-heading';
 
-interface HomeProps {
-  slides: ISlide[];
-}
+import { HomePageProps } from './home.interface';
 
-const Home: FC<HomeProps> = ({ slides }) => {
+const Home: FC<HomePageProps> = ({ slides, trendingMovies, actors }) => {
   return (
     <Meta
       title='Movies online'
@@ -21,6 +20,16 @@ const Home: FC<HomeProps> = ({ slides }) => {
       />
 
       {slides.length && <Slider slides={slides} />}
+
+      <div className='mb-10'>
+        <SubHeading title='Trending now' />
+        {trendingMovies.length && <Gallery items={trendingMovies} />}
+      </div>
+
+      <div className='mb-10'>
+        <SubHeading title='Best actors' />
+        {actors.length && <Gallery items={actors} />}
+      </div>
     </Meta>
   );
 };

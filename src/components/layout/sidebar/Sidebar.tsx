@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import FavoriteMovies from './FavoriteMovies/FavoriteMovies';
 import PopularMovies from './PopularMovies/PopularMovies';
@@ -17,4 +17,4 @@ const Sidebar: FC<SidebarProps> = ({ className }) => (
   </div>
 );
 
-export default Sidebar;
+export default memo(Sidebar);

@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import styles from './AdminNavigation.module.scss';
 
@@ -20,4 +20,4 @@ const NavItem: FC<{ item: INavItem }> = ({ item: { title, link } }) => {
   );
 };
 
-export default NavItem;
+export default memo(NavItem);

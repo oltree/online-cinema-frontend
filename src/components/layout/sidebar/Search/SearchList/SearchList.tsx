@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { IMovie } from '@/shared/interfaces/movie.interface';
 
@@ -36,4 +36,4 @@ const SearchList: FC<SearchListProps> = ({ movies }) => (
   </div>
 );
 
-export default SearchList;
+export default memo(SearchList);

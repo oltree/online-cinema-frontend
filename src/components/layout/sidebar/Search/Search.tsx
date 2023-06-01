@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { SearchField } from '@/components/ui/search-field';
 
@@ -16,4 +16,4 @@ const Search: FC = () => {
   );
 };
 
-export default Search;
+export default memo(Search);

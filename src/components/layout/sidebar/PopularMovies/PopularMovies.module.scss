@@ -12,9 +12,9 @@
   .movie {
     @apply mb-5 flex items-stretch;
 
-    .link {
+    .poster {
       img {
-        @apply rounded-image transition-colors;
+        @apply h-full w-full rounded-image transition-colors;
         border: 1px solid transparent !important;
       }
 

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { Routes } from '@/shared/enums/routes.enum';
 
@@ -16,4 +16,4 @@ const Logo: FC = () => (
   </Link>
 );
 
-export default Logo;
+export default memo(Logo);

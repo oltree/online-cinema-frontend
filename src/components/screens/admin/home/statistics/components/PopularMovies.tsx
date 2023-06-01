@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useQuery } from 'react-query';
 
 import { Loader } from '@/components/ui/loader';
@@ -50,4 +50,4 @@ const PopularMovies: FC = () => {
   );
 };
 
-export default PopularMovies;
+export default memo(PopularMovies);
