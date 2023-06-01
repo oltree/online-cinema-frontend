@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { Meta } from '@/components/meta';
-import Gallery from '@/components/ui/gallery/Gallery';
+import { Gallery } from '@/components/ui/gallery';
 import { Heading } from '@/components/ui/heading';
 import Slider from '@/components/ui/slider/Slider';
 import { SubHeading } from '@/components/ui/sub-heading';

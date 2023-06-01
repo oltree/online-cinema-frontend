@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import styles from './Gallery.module.scss';
 
@@ -9,7 +9,7 @@ interface GalleryProps {
   items: IGalleryItem[];
 }
 
-const Gallery: FC<GalleryProps> = ({ items }) => {
+export const Gallery: FC<GalleryProps> = memo(({ items }) => {
   return (
     <div className={styles.gallery}>
       {items.map(item => (
@@ -17,6 +17,4 @@ const Gallery: FC<GalleryProps> = ({ items }) => {
       ))}
     </div>
   );
-};
-
-export default Gallery;
+});
