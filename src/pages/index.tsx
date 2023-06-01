@@ -1,27 +1,28 @@
 import { GetStaticProps, NextPage } from 'next';
 
 import Home from '@/components/screens/home/Home';
+import { HomePageProps } from '@/components/screens/home/home.interface';
+import { IGalleryItem } from '@/components/ui/gallery/Gallery.interface';
 import { ISlide } from '@/components/ui/slider/slider.interface';
 
+import { ActorService } from '@/services/actor.service';
 import { MovieService } from '@/services/movie.service';
 
 import { getGenresList } from '@/utils/getGenresList';
 
-import { getMovieUrl } from '@/configs/url.config';
+import { getActorUrl, getMovieUrl } from '@/configs/url.config';
 
-interface HomePageProps {
-  slides: ISlide[];
-}
-
-const HomePage: NextPage<HomePageProps> = ({ slides }) => (
-  <Home slides={slides} />
-);
+const HomePage: NextPage<HomePageProps> = ({
+  slides,
+  trendingMovies,
+  actors,
+}) => <Home slides={slides} trendingMovies={trendingMovies} actors={actors} />;
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const data = await MovieService.getAll();
+    const dataMovies = await MovieService.getAll();
 
-    const slides: ISlide[] = data.slice(0, 3).map(movie => ({
+    const slides: ISlide[] = dataMovies.slice(0, 3).map(movie => ({
       _id: movie._id,
       link: getMovieUrl(movie.slug),
       bigPoster: movie.bigPoster,
@@ -29,15 +30,41 @@ export const getStaticProps: GetStaticProps = async () => {
       title: movie.title,
     }));
 
+    const dataTrendingMovies = await MovieService.getPopular();
+
+    const trendingMovies: IGalleryItem[] = dataTrendingMovies
+      .slice(0, 7)
+      .map(movie => ({
+        name: movie.title,
+        posterPath: movie.poster,
+        link: getMovieUrl(movie.slug),
+      }));
+
+    const dataActors = await ActorService.getAll();
+
+    const actors: IGalleryItem[] = dataActors.slice(0, 7).map(actor => ({
+      name: actor.name,
+      posterPath: actor.photo,
+      link: getActorUrl(actor.slug),
+      content: {
+        title: actor.name,
+        subTitle: `+${actor.countMovies} movies`,
+      },
+    }));
+
     return {
       props: {
         slides,
+        trendingMovies,
+        actors,
       },
     };
   } catch (e) {
     return {
       props: {
         slides: [],
+        trendingMovies: [],
+        actors: [],
       },
     };
   }

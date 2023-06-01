@@ -1,7 +1,7 @@
 @import '../../../assets/styles/mixins';
 
 .slider {
-  @apply relative mx-auto;
+  @apply relative mx-auto mb-10;
   max-width: 1200px;
 
   .slide {

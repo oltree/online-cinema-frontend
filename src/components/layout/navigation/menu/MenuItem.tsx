@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { MaterialIcon } from '@/components/ui/material-icon';
 
@@ -38,4 +38,4 @@ const MenuItem: FC<MenuItemProps> = ({ item }) => {
   );
 };
 
-export default MenuItem;
+export default memo(MenuItem);

@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import dynamic from 'next/dynamic';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import styles from './Navigation.module.scss';
 
@@ -25,4 +25,4 @@ const Navigation: FC<NavigationProps> = ({ className }) => (
   </div>
 );
 
-export default Navigation;
+export default memo(Navigation);

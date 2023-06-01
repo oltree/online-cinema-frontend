@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import styles from './FavoriteMovies.module.scss';
 
@@ -12,4 +12,4 @@ const FavoriteMovies: FC = () => {
   );
 };
 
-export default FavoriteMovies;
+export default memo(FavoriteMovies);

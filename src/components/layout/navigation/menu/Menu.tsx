@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import styles from './Menu.module.scss';
 
@@ -25,4 +25,4 @@ const Menu: FC<MenuProps> = ({ menu }) => {
   );
 };
 
-export default Menu;
+export default memo(Menu);

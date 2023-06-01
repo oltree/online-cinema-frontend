@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { Loader } from '@/components/ui/loader';
 import { MaterialIcon } from '@/components/ui/material-icon';
@@ -26,7 +26,7 @@ const PopularMovies: FC = () => {
       <p className={styles.heading}>Popular Movies</p>
       {popularMovies?.map(movie => (
         <div key={movie._id} className={styles.movie}>
-          <Link href={getMovieUrl(movie.slug)} className={styles.link}>
+          <Link href={getMovieUrl(movie.slug)} className={styles.poster}>
             <Image
               width={65}
               height={97}
@@ -52,4 +52,4 @@ const PopularMovies: FC = () => {
   );
 };
 
-export default PopularMovies;
+export default memo(PopularMovies);

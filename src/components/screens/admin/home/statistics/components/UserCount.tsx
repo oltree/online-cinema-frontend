@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useQuery } from 'react-query';
 
 import { Loader } from '@/components/ui/loader';
@@ -25,4 +25,4 @@ const UserCount: FC = () => {
   );
 };
 
-export default UserCount;
+export default memo(UserCount);
