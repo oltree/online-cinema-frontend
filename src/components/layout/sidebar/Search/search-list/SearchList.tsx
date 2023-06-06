@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { FC, memo } from 'react';
 
@@ -12,7 +12,7 @@ interface SearchListProps {
   movies: IMovie[];
 }
 
-const SearchList: FC<SearchListProps> = ({ movies }) => (
+export const SearchList: FC<SearchListProps> = memo(({ movies }) => (
   <div className={styles.list}>
     {movies.length ? (
       movies.map(movie => (
@@ -34,6 +34,4 @@ const SearchList: FC<SearchListProps> = ({ movies }) => (
       <p className={styles.notFound}>Movies not found!</p>
     )}
   </div>
-);
-
-export default memo(SearchList);
+));

@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { FC, PropsWithChildren } from 'react';
 
+import { PUBLIC_APP_URL } from '@/shared/constants/env';
 import { IMeta } from '@/shared/interfaces/meta.interface';
 
 import logo from '@/assets/icons/logo.svg';
@@ -19,7 +20,7 @@ export const Meta: FC<PropsWithChildren<IMeta>> = ({
   children,
 }) => {
   const { asPath } = useRouter();
-  const currentUrl = `${process.env.NEXT_PUBLIC_APP_URL}${asPath}`;
+  const currentUrl = `${PUBLIC_APP_URL}${asPath}`;
 
   return (
     <>

@@ -1,10 +1,11 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { FC, memo } from 'react';
 
 import { Loader } from '@/components/ui/loader';
 import { MaterialIcon } from '@/components/ui/material-icon';
 
+import { NUMBER_OF_DOWNLOAD_MOVIES } from '@/shared/constants/movies';
 import { Routes } from '@/shared/enums/routes.enum';
 
 import { getMovieUrl } from '@/configs/url.config';
@@ -14,9 +15,7 @@ import styles from './PopularMovies.module.scss';
 import { formatGenres } from './formatGenres';
 import { usePopularMovies } from './usePopularMovies';
 
-const NUMBER_OF_DOWNLOAD_MOVIES = 3;
-
-const PopularMovies: FC = () => {
+export const PopularMovies: FC = memo(() => {
   const { isLoading, popularMovies } = usePopularMovies();
 
   return isLoading ? (
@@ -50,6 +49,4 @@ const PopularMovies: FC = () => {
       </Link>
     </div>
   );
-};
-
-export default memo(PopularMovies);
+});

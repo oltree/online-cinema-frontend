@@ -1,14 +1,14 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { Loader } from '@/components/ui/loader';
+
+import { NUMBER_OF_DOWNLOAD_GENRES } from '@/shared/constants/genres';
 
 import Menu from '../Menu';
 
 import { usePopularGenres } from './usePopularGenres';
 
-const NUMBER_OF_DOWNLOAD_GENRES = 5;
-
-const GenresMenu: FC = () => {
+export const GenresMenu: FC = memo(() => {
   const { isLoading, data } = usePopularGenres();
   const genresMenu = { title: 'Popular genres', items: data || [] };
 
@@ -19,6 +19,4 @@ const GenresMenu: FC = () => {
   ) : (
     <Menu menu={genresMenu} />
   );
-};
-
-export default GenresMenu;
+});

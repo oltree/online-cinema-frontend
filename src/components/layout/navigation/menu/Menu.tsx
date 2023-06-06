@@ -2,7 +2,7 @@ import { FC, memo } from 'react';
 
 import styles from './Menu.module.scss';
 
-import MenuItem from './MenuItem';
+import { MenuItem } from './MenuItem';
 import { IMenu } from './menu.types';
 import { useFilteredMenuItems } from './useFilteredMenuItems';
 
