@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import ReduxToastr from 'react-redux-toastr';
 
-import Layout from '@/components/layout/Layout';
+import { Layout } from '@/components/layout';
 
 import { DEFAULT_DELAY } from '@/shared/constants/delays';
 import { ComponentRolesType } from '@/shared/types/roles.types';

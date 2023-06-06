@@ -1,14 +1,14 @@
 import { useQuery } from 'react-query';
 import { toastr } from 'react-redux-toastr';
 
+import { GENRE_LIMIT } from '@/shared/constants/genres';
+
 import { GenreService } from '@/services/genre.service';
 
 import { getGenreUrl } from '@/configs/url.config';
 
 import { IMenuItem } from '../menu.types';
 
-const GENRE_LIMIT = 4;
-//TODO:.filter(genre => genre.icon) - remove?
 export const usePopularGenres = () => {
   const queryData = useQuery(
     'Popular genres menu',

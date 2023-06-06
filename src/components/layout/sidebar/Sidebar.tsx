@@ -1,20 +1,18 @@
 import cn from 'classnames';
 import { FC, memo } from 'react';
 
-import FavoriteMovies from './FavoriteMovies/FavoriteMovies';
-import PopularMovies from './PopularMovies/PopularMovies';
-import Search from './Search/Search';
+import { Search } from './Search';
+import { FavoriteMovies } from './favorite-movies';
+import { PopularMovies } from './popular-movies';
 
 interface SidebarProps {
   className?: string;
 }
 
-const Sidebar: FC<SidebarProps> = ({ className }) => (
+export const Sidebar: FC<SidebarProps> = memo(({ className }) => (
   <div className={cn('p-layout', className)}>
     <Search />
     <PopularMovies />
     <FavoriteMovies />
   </div>
-);
-
-export default memo(Sidebar);
+));

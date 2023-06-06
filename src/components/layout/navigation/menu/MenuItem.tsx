@@ -15,15 +15,15 @@ interface MenuItemProps {
   item: IMenuItem;
 }
 
-const MenuItem: FC<MenuItemProps> = ({ item }) => {
+export const MenuItem: FC<MenuItemProps> = memo(({ item }) => {
   const { asPath } = useRouter();
-  const isActiveStyle = asPath === item.link;
+  const isActiveItem = asPath === item.link;
 
   const { logout } = useDispatchedActions();
   const isLogout = item.title === 'Logout';
 
   return (
-    <li className={cn(styles.item, isActiveStyle && styles.active)}>
+    <li className={cn(styles.item, isActiveItem && styles.active)}>
       <Link
         href={item.link}
         className={styles.link}
@@ -36,6 +36,4 @@ const MenuItem: FC<MenuItemProps> = ({ item }) => {
       </Link>
     </li>
   );
-};
-
-export default memo(MenuItem);
+});

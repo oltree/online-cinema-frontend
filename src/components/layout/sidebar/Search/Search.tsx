@@ -2,10 +2,11 @@ import { FC, memo } from 'react';
 
 import { SearchField } from '@/components/ui/search-field';
 
-import SearchList from './SearchList/SearchList';
+import { SearchList } from './search-list';
 import { useSearch } from './useSearch';
 
-const Search: FC = () => {
+//todo: rename folder to search
+export const Search: FC = memo(() => {
   const { searchTerm, isSuccess, popularMovies, onSearch } = useSearch();
 
   return (
@@ -14,6 +15,4 @@ const Search: FC = () => {
       {isSuccess && <SearchList movies={popularMovies || []} />}
     </div>
   );
-};
-
-export default memo(Search);
+});

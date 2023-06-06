@@ -2,10 +2,8 @@ import cn from 'classnames';
 import dynamic from 'next/dynamic';
 import { FC, memo } from 'react';
 
-import styles from './Navigation.module.scss';
-
-import Logo from './Logo';
-import GenresMenu from './menu/genres/GenresMenu';
+import { Logo } from './Logo';
+import { GenresMenu } from './menu/genres';
 import { generalMenu, mainMenu } from './menu/menu.data';
 
 interface NavigationProps {
@@ -16,13 +14,11 @@ const DynamicMenu = dynamic(() => import('./menu/Menu'), {
   ssr: false,
 });
 
-const Navigation: FC<NavigationProps> = ({ className }) => (
-  <div className={cn(styles.navigation, className)}>
+export const Navigation: FC<NavigationProps> = memo(({ className }) => (
+  <div className={cn('py-layout pl-layout', className)}>
     <Logo />
     <DynamicMenu menu={mainMenu} />
     <GenresMenu />
     <DynamicMenu menu={generalMenu} />
   </div>
-);
-
-export default memo(Navigation);
+));

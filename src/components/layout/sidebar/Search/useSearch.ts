@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useMemo, useState } from 'react';
 import { useQuery } from 'react-query';
 
 import { useDebounce } from '@/hooks/useDebounce';
@@ -16,6 +16,7 @@ export const useSearch = () => {
     () => MovieService.getAll(debouncedSearch),
     {
       select: data => data,
+
       enabled: !!debouncedSearch,
     }
   );
@@ -24,10 +25,13 @@ export const useSearch = () => {
     setSearchTerm(e.target.value);
   };
 
-  return {
-    searchTerm,
-    isSuccess,
-    popularMovies: data,
-    onSearch: handleSearch,
-  };
+  return useMemo(
+    () => ({
+      searchTerm,
+      isSuccess,
+      popularMovies: data,
+      onSearch: handleSearch,
+    }),
+    [searchTerm, isSuccess, data]
+  );
 };

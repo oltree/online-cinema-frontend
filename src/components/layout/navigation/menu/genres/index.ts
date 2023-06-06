@@ -1,0 +1,1 @@
+export { GenresMenu } from './GenresMenu';

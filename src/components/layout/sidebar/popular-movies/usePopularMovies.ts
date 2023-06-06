@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useQuery } from 'react-query';
 
 import { MovieService } from '@/services/movie.service';
@@ -7,5 +8,5 @@ export const usePopularMovies = () => {
     MovieService.getPopular()
   );
 
-  return { isLoading, popularMovies: data };
+  return useMemo(() => ({ isLoading, popularMovies: data }), [isLoading, data]);
 };
