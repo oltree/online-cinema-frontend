@@ -1,4 +1,4 @@
-import MovieEdit from '@/components/screens/admin/movie/MovieEdit';
+import { MovieEdit } from '@/components/screens/admin/movie';
 
 import { NextPageAuth } from '@/shared/types/roles.types';
 

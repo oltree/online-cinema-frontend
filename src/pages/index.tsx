@@ -1,6 +1,6 @@
 import { GetStaticProps, NextPage } from 'next';
 
-import Home from '@/components/screens/home/Home';
+import { Home } from '@/components/screens/home';
 import { HomePageProps } from '@/components/screens/home/home.interface';
 import { IGalleryItem } from '@/components/ui/gallery/Gallery.interface';
 import { ISlide } from '@/components/ui/slider/slider.interface';
@@ -8,7 +8,7 @@ import { ISlide } from '@/components/ui/slider/slider.interface';
 import { ActorService } from '@/services/actor.service';
 import { MovieService } from '@/services/movie.service';
 
-import { getGenresList } from '@/utils/getGenresList';
+import { getGenresList } from '@/utils/genres/getGenresList';
 
 import { getActorUrl, getMovieUrl } from '@/configs/url.config';
 

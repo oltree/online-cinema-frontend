@@ -23,7 +23,7 @@ const DynamicTextEditor = dynamic(
   }
 );
 
-const GenreEdit: FC = () => {
+export const GenreEdit: FC = () => {
   const {
     handleSubmit,
     register,
@@ -104,5 +104,3 @@ const GenreEdit: FC = () => {
     </Meta>
   );
 };
-
-export default GenreEdit;

@@ -22,7 +22,7 @@ const DynamicSelect = dynamic(() => import('@/components/ui/select/Select'), {
   ssr: false,
 });
 
-const MovieEdit: FC = () => {
+export const MovieEdit: FC = () => {
   const {
     handleSubmit,
     register,
@@ -186,5 +186,3 @@ const MovieEdit: FC = () => {
     </Meta>
   );
 };
-
-export default MovieEdit;

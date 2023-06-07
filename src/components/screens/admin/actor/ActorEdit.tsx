@@ -16,7 +16,7 @@ import { generateUrlSlug } from '@/utils/text/generateUrlSlug';
 import { IActorEditInput } from './actor-edit.interface';
 import { useActorEdit } from './useActorEdit';
 
-const ActorEdit: FC = () => {
+export const ActorEdit: FC = () => {
   const {
     handleSubmit,
     register,
@@ -85,5 +85,3 @@ const ActorEdit: FC = () => {
     </Meta>
   );
 };
-
-export default ActorEdit;

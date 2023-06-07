@@ -1,4 +1,4 @@
-import ActorEdit from '@/components/screens/admin/actor/ActorEdit';
+import { ActorEdit } from '@/components/screens/admin/actor';
 
 import { NextPageAuth } from '@/shared/types/roles.types';
 

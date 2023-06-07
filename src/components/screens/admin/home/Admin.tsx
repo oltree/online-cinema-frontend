@@ -4,16 +4,12 @@ import { Meta } from '@/components/meta';
 import { AdminNavigation } from '@/components/ui/admin-navigation';
 import { Heading } from '@/components/ui/heading';
 
-import Statistics from './statistics/Statistics';
+import { Statistics } from './statistics';
 
-const Admin: FC = () => {
-  return (
-    <Meta title='Admin panel'>
-      <AdminNavigation />
-      <Heading title='Some statistics' />
-      <Statistics />
-    </Meta>
-  );
-};
-
-export default Admin;
+export const Admin: FC = () => (
+  <Meta title='Admin panel'>
+    <AdminNavigation />
+    <Heading title='Some statistics' />
+    <Statistics />
+  </Meta>
+);

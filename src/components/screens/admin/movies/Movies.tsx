@@ -8,7 +8,7 @@ import { Heading } from '@/components/ui/heading';
 
 import { useMovies } from './useMovies';
 
-const Movies: FC = () => {
+export const Movies: FC = () => {
   const {
     createAsync,
     data,
@@ -36,5 +36,3 @@ const Movies: FC = () => {
     </Meta>
   );
 };
-
-export default Movies;

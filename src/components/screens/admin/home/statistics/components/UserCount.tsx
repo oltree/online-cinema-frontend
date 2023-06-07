@@ -8,7 +8,7 @@ import { AdminService } from '@/services/admin.service';
 
 import styles from '../Statistics.module.scss';
 
-const UserCount: FC = () => {
+export const UserCount: FC = memo(() => {
   const { isLoading, data: userCount } = useQuery('User count', () =>
     AdminService.getUserCount()
   );
@@ -23,6 +23,4 @@ const UserCount: FC = () => {
       <p className={styles.description}>users</p>
     </div>
   );
-};
-
-export default memo(UserCount);
+});

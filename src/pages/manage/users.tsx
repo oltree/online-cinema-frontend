@@ -1,4 +1,4 @@
-import Users from '@/components/screens/admin/users/Users';
+import { Users } from '@/components/screens/admin/users';
 
 import { NextPageAuth } from '@/shared/types/roles.types';
 

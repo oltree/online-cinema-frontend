@@ -8,7 +8,7 @@ import { Heading } from '@/components/ui/heading';
 
 import { useUsers } from './useUsers';
 
-const Users: FC = () => {
+export const Users: FC = () => {
   const { searchTerm, handleSearch, isLoading, data, deleteAsync } = useUsers();
 
   return (
@@ -25,5 +25,3 @@ const Users: FC = () => {
     </Meta>
   );
 };
-
-export default Users;
