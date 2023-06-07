@@ -8,7 +8,7 @@ import { Heading } from '@/components/ui/heading';
 
 import { useActors } from './useActors';
 
-const Actors: FC = () => {
+export const Actors: FC = () => {
   const {
     createAsync,
     data,
@@ -36,5 +36,3 @@ const Actors: FC = () => {
     </Meta>
   );
 };
-
-export default Actors;

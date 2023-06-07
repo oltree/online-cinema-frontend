@@ -8,7 +8,7 @@ import { Heading } from '@/components/ui/heading';
 
 import { useGenres } from './useGenres';
 
-const Genres: FC = () => {
+export const Genres: FC = () => {
   const {
     createAsync,
     data,
@@ -36,5 +36,3 @@ const Genres: FC = () => {
     </Meta>
   );
 };
-
-export default Genres;

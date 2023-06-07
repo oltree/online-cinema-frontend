@@ -8,30 +8,26 @@ import { SubHeading } from '@/components/ui/sub-heading';
 
 import { HomePageProps } from './home.interface';
 
-const Home: FC<HomePageProps> = ({ slides, trendingMovies, actors }) => {
-  return (
-    <Meta
-      title='Movies online'
-      description='Watch MovieApp movies and TV shows online or stream right to your browser.'
-    >
-      <Heading
-        title='Watch movies online'
-        className='mb-8 text-gray-300 text-xl'
-      />
+export const Home: FC<HomePageProps> = ({ slides, trendingMovies, actors }) => (
+  <Meta
+    title='Movies online'
+    description='Watch MovieApp movies and TV shows online or stream right to your browser.'
+  >
+    <Heading
+      title='Watch movies online'
+      className='mb-8 text-gray-300 text-xl'
+    />
 
-      {slides.length && <Slider slides={slides} />}
+    {slides.length && <Slider slides={slides} />}
 
-      <div className='mb-10'>
-        <SubHeading title='Trending now' />
-        {trendingMovies.length && <Gallery items={trendingMovies} />}
-      </div>
+    <div className='mb-10'>
+      <SubHeading title='Trending now' />
+      {trendingMovies.length && <Gallery items={trendingMovies} />}
+    </div>
 
-      <div className='mb-10'>
-        <SubHeading title='Best actors' />
-        {actors.length && <Gallery items={actors} />}
-      </div>
-    </Meta>
-  );
-};
-
-export default Home;
+    <div className='mb-10'>
+      <SubHeading title='Best actors' />
+      {actors.length && <Gallery items={actors} />}
+    </div>
+  </Meta>
+);

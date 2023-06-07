@@ -1,4 +1,4 @@
-import Genres from '@/components/screens/admin/genres/Genres';
+import { Genres } from '@/components/screens/admin/genres';
 
 import { NextPageAuth } from '@/shared/types/roles.types';
 

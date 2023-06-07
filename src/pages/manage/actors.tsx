@@ -1,4 +1,4 @@
-import Actors from '@/components/screens/admin/actors/Actors';
+import { Actors } from '@/components/screens/admin/actors';
 
 import { NextPageAuth } from '@/shared/types/roles.types';
 

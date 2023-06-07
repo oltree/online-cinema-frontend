@@ -12,7 +12,7 @@ import { IMovie } from '@/shared/interfaces/movie.interface';
 
 import { MovieService } from '@/services/movie.service';
 
-import { getGenresList } from '@/utils/getGenresList';
+import { getGenresList } from '@/utils/genres/getGenresList';
 
 import { getAdminUrl } from '@/configs/url.config';
 

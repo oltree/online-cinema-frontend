@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { FC, memo } from 'react';
 import { useQuery } from 'react-query';
@@ -15,7 +15,7 @@ import { getMovieUrl } from '@/configs/url.config';
 
 import styles from '../Statistics.module.scss';
 
-const PopularMovies: FC = () => {
+export const PopularMovies: FC = memo(() => {
   const { isLoading, data: movie } = useQuery(
     'Most polular movie in statistics',
     () => MovieService.getPopular(),
@@ -48,6 +48,4 @@ const PopularMovies: FC = () => {
       )}
     </div>
   );
-};
-
-export default memo(PopularMovies);
+});

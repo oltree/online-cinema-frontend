@@ -14,7 +14,7 @@ import styles from './Auth.module.scss';
 import { AuthButtons, AuthFields } from './components';
 import { useAuthRedirect } from './useAuthRedirect';
 
-const Auth: FC = () => {
+export const Auth: FC = () => {
   useAuthRedirect();
 
   const [mode, setMode] = useState<AuthModeType>(AuthModes.Login);
@@ -48,5 +48,3 @@ const Auth: FC = () => {
     </Meta>
   );
 };
-
-export default Auth;
