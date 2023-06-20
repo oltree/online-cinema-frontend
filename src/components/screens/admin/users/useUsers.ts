@@ -44,7 +44,7 @@ export const useUsers = () => {
 
   const { mutateAsync: deleteAsync } = useMutation(
     'Delete user',
-    (userId: string) => UserService.deleteUser(userId),
+    (userId: string) => UserService.delete(userId),
     {
       onSuccess: () => {
         toastr.success('Delete user', 'Delete user successfully');
