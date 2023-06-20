@@ -7,7 +7,7 @@ import { emailRegex, passwordRegex } from '@/shared/regexes';
 import { AuthType } from '@/shared/types/auth.types';
 
 interface AuthFieldsProps {
-  registerInput: UseFormRegister<AuthType>;
+  registerInput: UseFormRegister<any>; // TODO: specify the type!
   errors: FieldErrors<AuthType>;
 }
 
