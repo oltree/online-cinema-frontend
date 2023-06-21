@@ -59,10 +59,14 @@ export const MovieService = {
     return response?.data;
   },
 
-  async getByActor(actorId: string) {
-    const response = await api.get<IMovie[]>(
-      getMoviesUrl(`/by-actor/${actorId}`)
-    );
+  async getByActor(_id: string) {
+    const response = await api.get<IMovie[]>(getMoviesUrl(`/by-actor/${_id}`));
+
+    return response?.data;
+  },
+
+  async getBySlug(slug: string) {
+    const response = await api.get<IMovie>(getMoviesUrl(`/by-slug/${slug}`));
 
     return response?.data;
   },

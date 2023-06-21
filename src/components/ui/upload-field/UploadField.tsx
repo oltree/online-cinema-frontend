@@ -1,6 +1,6 @@
 import cn from 'classnames';
-import Image from "next/legacy/image";
-import { CSSProperties, FC, memo } from 'react';
+import Image from 'next/legacy/image';
+import { FC, memo } from 'react';
 
 import { OnChangeType } from '@/shared/types/onChange.type';
 
