@@ -17,10 +17,6 @@
 
       .timeControls {
         @apply flex items-center text-white ml-4 opacity-60;
-
-        > p:nth-child(2) {
-          @apply mx-2;
-        }
       }
     }
 

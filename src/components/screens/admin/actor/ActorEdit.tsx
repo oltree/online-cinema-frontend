@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic';
 import { FC } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
