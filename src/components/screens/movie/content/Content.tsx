@@ -8,6 +8,8 @@ import { getActorUrl, getGenreUrl } from '@/configs/url.config';
 
 import styles from './Content.module.scss';
 
+import { FavoriteButton } from '../favorite-button/FavoriteButton';
+
 import { ContentList } from './content-list';
 
 interface ContentProps {
@@ -18,12 +20,6 @@ export const Content: FC<ContentProps> = memo(({ movie }) => (
   <div className={styles.content}>
     <h1>{movie.title}</h1>
 
-    <div>favorite button</div>
-
-    <div className={styles.rating}>
-      <MaterialIcon name='MdStarRate' />
-      <span>{movie.rating.toFixed(1)}</span>
-    </div>
     <div className={styles.details}>
       <span>{movie.parameters.year} · </span>
       <span>{movie.parameters.country} · </span>
@@ -45,5 +41,12 @@ export const Content: FC<ContentProps> = memo(({ movie }) => (
         _id: actor._id,
       }))}
     />
+
+    <div className={styles.rating}>
+      <MaterialIcon name='MdStarRate' />
+      <span>{movie.rating.toFixed(1)}</span>
+    </div>
+
+    <FavoriteButton movieId={movie._id} />
   </div>
 ));
