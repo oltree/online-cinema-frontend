@@ -1,12 +1,10 @@
 import { IMovieEditInput } from '@/components/screens/admin/movie/movie-edit.enterface';
 
-import { Routes } from '@/shared/enums/routes.enum';
-import { IActor } from '@/shared/interfaces/actor.interface';
 import { IMovie } from '@/shared/interfaces/movie.interface';
 
 import api from '@/api/config';
 
-import { getActorsUrl, getMoviesUrl } from '@/configs/api.config';
+import { getMoviesUrl } from '@/configs/api.config';
 
 export const MovieService = {
   async getAll(searchTerm?: string) {
@@ -22,7 +20,7 @@ export const MovieService = {
   },
 
   async getPopular() {
-    const response = await api.get<IMovie[]>(getMoviesUrl(Routes.Popular));
+    const response = await api.get<IMovie[]>(getMoviesUrl('/most-popular'));
 
     return response?.data;
   },
@@ -67,6 +65,14 @@ export const MovieService = {
 
   async getBySlug(slug: string) {
     const response = await api.get<IMovie>(getMoviesUrl(`/by-slug/${slug}`));
+
+    return response?.data;
+  },
+
+  async updateCountMovieViews(slug: string) {
+    const response = await api.post(getMoviesUrl('/update-count-opened'), {
+      slug,
+    });
 
     return response?.data;
   },

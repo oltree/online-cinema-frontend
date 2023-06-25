@@ -5,6 +5,6 @@ export enum Routes {
   Genres = '/genres',
   Fresh = '/fresh',
   Trending = '/trending',
-  Popular = '/most-popular',
+  Favorites = '/favorites',
   NotFound = '/404',
 }

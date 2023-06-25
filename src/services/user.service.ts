@@ -1,5 +1,6 @@
 import { IProfileInput } from '@/components/screens/profile/profile.interface';
 
+import { IMovie } from '@/shared/interfaces/movie.interface';
 import { IUser } from '@/shared/interfaces/user.interface';
 
 import api from '@/api/config';
@@ -45,6 +46,20 @@ export const UserService = {
 
   async updateProfile(data: IProfileInput) {
     const response = await api.put<string>(getUsersUrl('/profile'), data);
+
+    return response?.data;
+  },
+
+  async getFavorites() {
+    const response = await api.get<IMovie[]>(getUsersUrl('/profile/favorites'));
+
+    return response?.data;
+  },
+
+  async toggleFavorite(movieId: string) {
+    const response = await api.post(getUsersUrl('/profile/favorites'), {
+      movieId,
+    });
 
     return response?.data;
   },

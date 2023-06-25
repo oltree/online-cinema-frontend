@@ -11,7 +11,7 @@ import {
   removeTokensFromCookies,
   saveAuthDataToStorage,
   saveTokensToCookies,
-} from './auth.helpers';
+} from '../utils/auth/workWithStorages';
 
 export const AuthService = {
   async register(email: string, password: string) {
