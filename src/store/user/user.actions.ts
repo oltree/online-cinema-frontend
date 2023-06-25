@@ -3,7 +3,7 @@ import { toastr } from 'react-redux-toastr';
 
 import { AuthType } from '@/shared/types/auth.types';
 
-import { AuthService } from '@/services/auth/auth.service';
+import { AuthService } from '@/services/auth.service';
 
 import { getErrorMesssage } from '@/api/config.helper';
 

@@ -1,8 +1,9 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-import { removeTokensFromCookies } from '@/services/auth/auth.helpers';
-import { AuthService } from '@/services/auth/auth.service';
+import { AuthService } from '@/services/auth.service';
+
+import { removeTokensFromCookies } from '@/utils/auth/workWithStorages';
 
 import { API_URL } from '@/configs/api.config';
 

@@ -14,22 +14,19 @@ const DynamicVideoPlayer = dynamic(
   { ssr: false }
 );
 
-export const Movie: FC<MoviePageProps> = ({ movie, similarMovies }) => {
-  return (
-    <Meta title={movie.title} description={`Watch ${movie.title}`}>
-      <Banner
-        image={movie.bigPoster}
-        Detail={() => <Content movie={movie} />}
-      />
+const DynamicRating = dynamic(() => import('./rating/Rating'), { ssr: false });
 
-      <DynamicVideoPlayer slug={movie.slug} videoSource={movie.videoUrl} />
+export const Movie: FC<MoviePageProps> = ({ movie, similarMovies }) => (
+  <Meta title={movie.title} description={`Watch ${movie.title}`}>
+    <Banner image={movie.bigPoster} Detail={() => <Content movie={movie} />} />
 
-      <div className='mt-12'>
-        <SubHeading title='Similar' />
-        <Gallery items={similarMovies} />
-      </div>
+    <DynamicVideoPlayer slug={movie.slug} videoSource={movie.videoUrl} />
 
-      <div>rating</div>
-    </Meta>
-  );
-};
+    <div className='mt-12'>
+      <SubHeading title='Similar' />
+      <Gallery items={similarMovies} />
+    </div>
+
+    <DynamicRating slug={movie.slug} id={movie._id} />
+  </Meta>
+);
