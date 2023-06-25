@@ -1,4 +1,5 @@
 import { IGenreEditInput } from '@/components/screens/admin/genre/genre-edit.interface';
+import { GenreType } from '@/components/screens/genres/genre.type';
 
 import { IGenre } from '@/shared/interfaces/genre.interface';
 
@@ -45,6 +46,12 @@ export const GenreService = {
 
   async getBySlug(slug: string) {
     const response = await api.get<IGenre>(getGenresUrl(`/by-slug/${slug}`));
+
+    return response?.data;
+  },
+
+  async getCollectionGenres() {
+    const response = await api.get<GenreType[]>(getGenresUrl('/collections'));
 
     return response?.data;
   },
