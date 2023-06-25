@@ -70,4 +70,13 @@ export const MovieService = {
 
     return response?.data;
   },
+
+  async updateCountMovieViews(slug: string) {
+    const response = await api.put<string>(
+      getMoviesUrl(`/update-count-opened`),
+      slug
+    );
+
+    return response?.data;
+  },
 };
