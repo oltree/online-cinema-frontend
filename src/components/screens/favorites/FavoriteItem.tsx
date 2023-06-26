@@ -4,6 +4,8 @@ import { FC, memo } from 'react';
 
 import { IGalleryItem } from '@/components/ui/gallery/Gallery.interface';
 
+import { useAuth } from '@/hooks/useAuth';
+
 import styles from './Favorites.module.scss';
 
 import { FavoriteButton } from '../movie/favorite-button/FavoriteButton';
@@ -17,19 +19,23 @@ interface FavoriteItemProps {
   item: IFavoriteItem;
 }
 
-export const FavoriteItem: FC<FavoriteItemProps> = memo(({ item }) => (
-  <div className={styles.itemWrapper}>
-    <FavoriteButton movieId={item._id} />
-    <Link href={item.link} className={styles.item}>
-      <Image
-        alt={item.name}
-        src={item.posterPath}
-        layout='fill'
-        draggable={false}
-        priority
-      />
+export const FavoriteItem: FC<FavoriteItemProps> = memo(({ item }) => {
+  const { user } = useAuth();
 
-      <p className={styles.title}>{item.title}</p>
-    </Link>
-  </div>
-));
+  return (
+    <div className={styles.itemWrapper}>
+      {user && <FavoriteButton movieId={item._id} />}
+      <Link href={item.link} className={styles.item}>
+        <Image
+          alt={item.name}
+          src={item.posterPath}
+          layout='fill'
+          draggable={false}
+          priority
+        />
+
+        <p className={styles.title}>{item.title}</p>
+      </Link>
+    </div>
+  );
+});

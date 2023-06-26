@@ -25,6 +25,7 @@ export const AuthFields: FC<AuthFieldsProps> = memo(
         })}
         error={errors.email?.message}
         placeholder='E-mail'
+        autoComplete='true'
       />
       <Field
         type='password'
@@ -37,6 +38,7 @@ export const AuthFields: FC<AuthFieldsProps> = memo(
         })}
         error={errors.password?.message}
         placeholder='Password'
+        autoComplete='true'
       />
     </div>
   )
