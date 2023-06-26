@@ -4,6 +4,8 @@ import { Meta } from '@/components/meta';
 import { Heading } from '@/components/ui/heading';
 import { Loader } from '@/components/ui/loader';
 
+import { useAuth } from '@/hooks/useAuth';
+
 import { getMovieUrl } from '@/configs/url.config';
 
 import styles from './Favorites.module.scss';
@@ -13,6 +15,10 @@ import { useFavorites } from './useFavorites';
 
 export const Favorites: FC = memo(() => {
   const { favoritesMovies, isLoading } = useFavorites();
+
+  const { user } = useAuth();
+
+  if (!user) return null;
 
   return (
     <Meta title='Favorites'>

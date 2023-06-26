@@ -19,6 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
     return {
       props: { genres },
+      revalidate: 60,
     };
   } catch (e) {
     return {

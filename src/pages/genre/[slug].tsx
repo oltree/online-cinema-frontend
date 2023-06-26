@@ -53,6 +53,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         genre,
         movies,
       },
+      revalidate: 60,
     };
   } catch (e) {
     return {

@@ -39,6 +39,7 @@
     "react-star-rating-component": "^1.4.1",
     "react-transition-group": "^4.4.5",
     "sass": "^1.62.1",
+    "sharp": "^0.32.1",
     "string-strip-html": "^13.4.1",
     "typescript": "5.0.4"
   },

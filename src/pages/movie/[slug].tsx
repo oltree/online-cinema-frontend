@@ -57,6 +57,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         movie: currentMovie,
         similarMovies,
       },
+      revalidate: 60,
     };
   } catch (e) {
     return {

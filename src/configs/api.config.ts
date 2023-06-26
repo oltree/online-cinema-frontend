@@ -1,7 +1,8 @@
-import { PUBLIC_APP_URL } from '@/shared/constants/env';
+import { PUBLIC_APP_URL, SERVER_APP_URL } from '@/shared/constants/env';
 import { Endpoints } from '@/shared/enums/endpoints.enum';
 
 export const API_URL = `${PUBLIC_APP_URL}/api`;
+export const API_SERVER_URL = `${SERVER_APP_URL}/api`;
 
 const getUrl = (endpoint: string, url: string) => `/${endpoint}${url}`;
 

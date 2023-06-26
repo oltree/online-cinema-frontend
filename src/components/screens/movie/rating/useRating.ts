@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useMutation, useQuery } from 'react-query';
 import { toastr } from 'react-redux-toastr';
 
+import { useAuth } from '@/hooks/useAuth';
+
 import { DEFAULT_DELAY } from '@/shared/constants/delays';
 
 import { RatingService } from '@/services/rating.service';
@@ -9,6 +11,8 @@ import { RatingService } from '@/services/rating.service';
 export const useRating = (movieId: string) => {
   const [rating, setRating] = useState(0);
   const [isSended, setIsSended] = useState(false);
+
+  const { user } = useAuth();
 
   const { refetch } = useQuery(
     ['Your movie rating', movieId],
@@ -18,7 +22,7 @@ export const useRating = (movieId: string) => {
         setRating(data);
       },
 
-      enabled: !!movieId,
+      enabled: !!movieId && !!user,
     }
   );
 

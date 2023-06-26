@@ -1,16 +1,18 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
+import { IS_PRODUCTION } from '@/shared/constants/env';
+
 import { AuthService } from '@/services/auth.service';
 
 import { removeTokensFromCookies } from '@/utils/auth/workWithStorages';
 
-import { API_URL } from '@/configs/api.config';
+import { API_SERVER_URL, API_URL } from '@/configs/api.config';
 
 import { getContentType, getErrorMesssage } from './config.helper';
 
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: IS_PRODUCTION ? API_SERVER_URL : API_URL,
   headers: getContentType(),
 });
 

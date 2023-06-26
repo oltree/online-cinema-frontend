@@ -5,8 +5,6 @@ import { toastr } from 'react-redux-toastr';
 
 import { UserService } from '@/services/user.service';
 
-import HeartImage from '@/assets/animation/heart-animation.png';
-
 import styles from './FavoriteButton.module.scss';
 
 import { useFavorites } from '../../favorites/useFavorites';
@@ -46,7 +44,7 @@ export const FavoriteButton: FC<FavoriteButtonProps> = memo(({ movieId }) => {
     <button
       onClick={() => mutateAsync()}
       className={cn(styles.button, isSmashed && styles.animate)}
-      style={{ backgroundImage: `url(${HeartImage.src})` }}
+      style={{ backgroundImage: `url(/heart-animation.png)` }}
     />
   );
 });
