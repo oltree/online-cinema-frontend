@@ -41,11 +41,12 @@ const VideoPlayer: FC<VideoPlayerProps> = memo(({ slug, videoSource }) => {
 
           <div className={styles.controls}>
             <div>
-              <button onClick={actions.revertVideo}>
+              <button aria-label='revert video' onClick={actions.revertVideo}>
                 <MaterialIcon name='MdHistory' />
               </button>
 
               <button
+                aria-label='toggle video'
                 onClick={actions.toggleVideo}
                 className={styles.playButton}
               >
@@ -54,7 +55,7 @@ const VideoPlayer: FC<VideoPlayerProps> = memo(({ slug, videoSource }) => {
                 />
               </button>
 
-              <button onClick={actions.forwardVideo}>
+              <button aria-label='forward video' onClick={actions.forwardVideo}>
                 <MaterialIcon name='MdUpdate' />
               </button>
 
@@ -62,7 +63,10 @@ const VideoPlayer: FC<VideoPlayerProps> = memo(({ slug, videoSource }) => {
             </div>
 
             <div>
-              <button onClick={actions.fullScreen}>
+              <button
+                aria-label='full screen video'
+                onClick={actions.fullScreen}
+              >
                 <MaterialIcon name='MdFullscreen' />
               </button>
             </div>

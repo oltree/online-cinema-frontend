@@ -10,7 +10,11 @@ interface AuthButtonProps {
 }
 
 export const AuthButton: FC<AuthButtonProps> = memo(({ slug }) => (
-  <Link href={`/auth?redirect=${getMovieUrl(slug)}`} className={styles.link}>
+  <Link
+    href={`/auth?redirect=${getMovieUrl(slug)}`}
+    className={styles.link}
+    aria-label='login'
+  >
     Sign in
   </Link>
 ));

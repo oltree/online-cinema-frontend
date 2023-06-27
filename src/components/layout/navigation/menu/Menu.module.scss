@@ -2,7 +2,7 @@
   @apply mb-10 animate-fade;
 
   .heading {
-    @apply mb-5 text-gray-500 uppercase font-semibold;
+    @apply mb-5 text-gray-300 uppercase font-semibold;
   }
 
   .items {
@@ -12,7 +12,7 @@
       @apply px-3 border-r-4 border-r-transparent transition-colors;
 
       .link {
-        @apply flex items-center gap-3 text-gray-600 cursor-pointer;
+        @apply flex items-center gap-3 text-gray-300 cursor-pointer;
 
         svg {
           @apply text-2lg transition-colors;
