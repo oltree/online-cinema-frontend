@@ -36,7 +36,7 @@ export const Profile: FC = () => {
             <AuthFields registerInput={register} errors={errors} />
           )}
 
-          <Button>Update</Button>
+          <Button aria-label='update email'>Update</Button>
         </form>
       </div>
     </Meta>

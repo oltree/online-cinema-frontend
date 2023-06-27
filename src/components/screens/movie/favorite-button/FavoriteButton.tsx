@@ -45,6 +45,7 @@ export const FavoriteButton: FC<FavoriteButtonProps> = memo(({ movieId }) => {
       onClick={() => mutateAsync()}
       className={cn(styles.button, isSmashed && styles.animate)}
       style={{ backgroundImage: `url(/heart-animation.png)` }}
+      aria-label='add like for the movies'
     />
   );
 });

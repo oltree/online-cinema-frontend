@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import { useRouter } from 'next/router';
 import { FC } from 'react';
 
@@ -30,7 +30,11 @@ const SlideItem: FC<ISlideItem> = ({ slide, buttonTitle = 'Watch' }) => {
       <div className={styles.content}>
         <div className={styles.heading}>{slide.title}</div>
         <div className={styles.subHeading}>{slide.subTitle}</div>
-        <button className={styles.button} onClick={() => push(slide.link)}>
+        <button
+          className={styles.button}
+          aria-label={buttonTitle}
+          onClick={() => push(slide.link)}
+        >
           {buttonTitle}
         </button>
       </div>

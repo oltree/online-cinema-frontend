@@ -23,6 +23,7 @@ export const AuthButtons: FC<AuthButtonsProps> = memo(({ setMode }) => {
         onClick={() => setMode(AuthModes.Login)}
         disabled={isLoading}
         className={styles.button}
+        aria-label='login'
       >
         {AuthModes.Login}
       </Button>
@@ -31,6 +32,7 @@ export const AuthButtons: FC<AuthButtonsProps> = memo(({ setMode }) => {
         onClick={() => setMode(AuthModes.Register)}
         disabled={isLoading}
         className={styles.button}
+        aria-label='register'
       >
         {AuthModes.Register}
       </Button>
