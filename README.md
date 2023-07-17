@@ -1,38 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Description
 
-## Getting Started
+The Online Movie Theater project is a web application that allows users to browse and select movies for online viewing. Users can register, view information about movies, rate them, get recommendations for viewing, mark movies and videos they like.
 
-First, run the development server:
+## `Functionality`
 
-```bash
+- Browse movies: Users can browse available movies, filter them by genre, actors, rating and other parameters.
+- Registration, Authentication, Profile Update: Users can create accounts, log in and save their preferences and change their details.
+- Rating: Users can rate movies as well as see other users' ratings.
+- Favorite Movies: Users can save their favorite movies to their collection.
+- Recommendations: The system can offer personalized movie recommendations based on the user's preferences and viewing history.
+
+## `Technologies`
+
+#Frameworks and Libraries:
+
+Next.js: A React framework for building web applications.
+React: A JavaScript library for building user interfaces.
+Redux: A library for managing application state.
+React Redux: The official binding library for Redux and React.
+React Query: A library for managing server-state and caching in React.
+Axios: A library for making HTTP requests.
+TypeScript: A statically typed programming language.
+
+#Tools and Utilities:
+
+Next.js Progressbar: A package for displaying a progress bar during page loading.
+React Hook Form: A library for managing forms in React.
+React Select: A library for creating beautiful dropdown select components in React.
+React Loading Skeleton: A component for displaying temporary content placeholders during data loading.
+React Transition Group: A library for creating animations and transitions between React components.
+React Icons: A library of icons for React.
+React Star Rating Component: A star rating component for React.
+Classnames: A utility for merging and conditionally applying CSS classes.
+JS Cookie: A utility for working with cookies in JavaScript.
+
+#Development Tools:
+
+Sass: A CSS preprocessor that allows the use of variables, nesting, and other features.
+Prettier: A code formatting tool.
+Tailwind CSS: A CSS framework that provides a set of ready-to-use styles and utilities for rapid interface development.
+PostCSS: A tool for transforming CSS using plugins.
+
+## `Available Scripts`
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Runs the application in development mode.
+Open http://localhost:3000 to view it in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The page will reload when you make changes.
+You may also see any lint errors in the console.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+npm run build
+Builds the application for production into the build folder.
+It properly bundles React in production mode and optimizes the build for the best performance.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+npm start
+Runs the application in production mode.
+Open http://localhost:3000 to view it in your browser.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+npm run lint
+Runs the linter to check the project for any lint errors.
+You will see any lint errors in the console.
